@@ -7,8 +7,9 @@
 
 class object
 	{
-	std::list<object*> lower_objects;
-	object *upper_object;
+	public:
+	std::list<object*> lower_objects; // list lower objects
+	object *upper_object; //upper for this object
 	virtual void draw();
 	};
 
