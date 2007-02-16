@@ -1,3 +1,4 @@
+// Object class file
 #ifndef OBJECT
 #define OBJECT
 
