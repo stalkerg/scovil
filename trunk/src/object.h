@@ -6,9 +6,9 @@
 
 class object
 	{
-	std::list<object> child_objects;
+	std::list<object*> lower_objects;
+	object *upper_object;
 	virtual void draw();
-	
 	};
 
 #endif
