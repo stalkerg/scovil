@@ -6,7 +6,7 @@
 class object
 	{
 	std::list<object> child_objects;
-	virtual draw();
+	virtual void draw();
 	
 	};
 
