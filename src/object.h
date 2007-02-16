@@ -1,4 +1,5 @@
-// Object class file
+// Object class headerfile
+
 #ifndef OBJECT
 #define OBJECT
 
