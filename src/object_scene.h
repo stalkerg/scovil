@@ -2,6 +2,7 @@
 #ifndef OBJECT_SCENE
 #define OBJECT_SCENE
 
+#include "object.h"
 
 class object_scene : public object
 	{
