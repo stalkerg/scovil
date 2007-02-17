@@ -1,6 +1,6 @@
 // Scene class headerfile
-#ifndef SCENEOBJECT
-#define SCENEOBJECT
+#ifndef OBJECT_SCENE
+#define OBJECT_SCENE
 
 
 class sceneobject : public object
