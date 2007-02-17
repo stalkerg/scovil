@@ -3,7 +3,7 @@
 #define OBJECT_SCENE
 
 
-class sceneobject : public object
+class object_scene : public object
 	{
 	public:
 	void draw();
