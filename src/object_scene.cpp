@@ -1,2 +1,2 @@
 // Scene class cppfile
-#include "sceneobject.h"
+#include "object_scene.h"
