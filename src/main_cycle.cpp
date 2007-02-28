@@ -28,7 +28,7 @@ int main_cycle(void *unused)
 	if ( wglSwapIntervalEXT != 0 ) 
 		{
 		// Disable vertical synchronisation :
-		wglSwapIntervalEXT( 0 ) ;
+		wglSwapIntervalEXT(0) ;
 		}
 	#endif
 	glEnable(GL_POINT_SMOOTH);

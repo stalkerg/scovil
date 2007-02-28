@@ -20,6 +20,7 @@ void object_dot::draw()
 
 void object_dot::draw_body()
 	{
+	//glColor3f(1.0,1.0,1.0);
 	glBegin(GL_POINTS);
 		glVertex3f(cord.x, cord.y, cord.z);
 	glEnd();
@@ -31,6 +32,7 @@ void object_dot::draw_all()
 	glPushMatrix();
 		glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
 		draw_body();
+
 		for(object_iterator=lower_objects.begin();
 		    object_iterator==lower_objects.end();
 		    ++object_iterator)
