@@ -1,5 +1,5 @@
-#ifndef OBJECT_DOT
-#define OBJECT_DOT
+#ifndef OBJECT_INIT
+#define OBJECT_INIT
 
 #include <string>
 #include <SDL_thread.h>

@@ -14,7 +14,7 @@ object_scene::object_scene()
 void object_scene::draw()
 	{
 	#ifdef DEBUG
-	std::cout<<"object_scene draw()"<<std::endl;
+	std::cout<<"object_scene draw()"<<lower_objects.size()<<std::endl;
 	#endif
 	glClearColor(0,0,0,0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -27,7 +27,7 @@ void object_scene::draw()
 		{
 		glPushMatrix();
 			for(object_iterator=lower_objects.begin();
-			    object_iterator==lower_objects.end();
+			    object_iterator!=lower_objects.end();
 			    ++object_iterator)
 				object_iterator->p_object->draw();
 		glPopMatrix();
