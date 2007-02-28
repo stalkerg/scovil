@@ -8,9 +8,14 @@
 class object
 	{
 	public:
-	std::list<object*> lower_objects; // list lower objects
+	
+	struct object_container
+		{
+		object *p_object;
+		};
+	std::list<object_container> lower_objects; // list lower objects
 	object *upper_object; //upper for this object
-	virtual void draw();
+	virtual void draw() {};
 	};
 
 #endif

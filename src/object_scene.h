@@ -2,12 +2,17 @@
 #ifndef OBJECT_SCENE
 #define OBJECT_SCENE
 
+#include <GL/gl.h>
 #include "object.h"
+#include "mathlib.h"
 
 class object_scene : public object
 	{
 	public:
-	void draw();
+	vec2 resolution;
+	GLdouble near, far, aspect;
+	object_scene();
+	virtual void draw();
 	};
 
 #endif
