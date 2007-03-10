@@ -7,7 +7,7 @@ find_package(PNG REQUIRED)
 
 ADD_LIBRARY(scovil SHARED object.h object.cpp object_dot.h
 object_dot.cpp object_scene.h object_scene.cpp mathlib.cpp mathlib.h
-init.cpp init.h main_cycle.cpp main_cycle.h)
+init.cpp init.h main_cycle.cpp main_cycle.h object_line.h object_line.cpp )
 
 ADD_SUBDIRECTORY(examples/cpp)
 
