@@ -9,6 +9,7 @@ class object_dot: public object
 	{
 	public:
 	vec3 cord, mat_cord;
+	GLint size;
 	virtual void draw();
 	void draw_body();
 	void draw_all();
