@@ -12,11 +12,10 @@ int main()
 set_options(640, 480, 32, true, false);
 set_caption("Example1", "Test Example 1");
 
-
-
-
 object *first_object = new object_scene;
-set_head_object(first_object);//делаем глазки :)
+set_head_object(first_object);
+
+//делаем глазки :)
 object_dot *dot1 = new object_dot;
 dot1->cord.x = -0.2;
 dot1->cord.y = 0.7;
@@ -30,22 +29,10 @@ dot2->cord.z = 0.9;
 first_object->add_object(dot2);
 
 //делаем ротик :)
-object_line *line1 = new object_line;
-line1->cord.x = 0;
-line1->cord.y = 0;
-line1->cord.z = 0;
-line1->cord2.x =1;
-line1->cord2.y =1;
-line1->cord2.z =3;
+object_line *line1 = new object_line(0, 0, 0, 1, 1, 3);
 first_object->add_object(line1);
 
-object_line *line2 = new object_line;
-line2->cord.x = 0;
-line2->cord.y = 0;
-line2->cord.z = 0;
-line2->cord2.x =-1;
-line2->cord2.y =1;
-line2->cord2.z =3;
+object_line *line2 = new object_line(0, 0, 0, -1, 1, 3);
 first_object->add_object(line2);
 
 SDL_Thread *cyle_thread = init_cycle();
