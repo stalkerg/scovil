@@ -40,3 +40,22 @@ void object_dot::draw_all()
 			object_iterator->p_object->draw();
 	glPopMatrix();
 	}
+
+object_dot::object_dot(float x, float y, float z)
+	{
+	cord.x = x;
+	cord.y = y;
+	cord.z = z;
+	}
+
+object_dot::object_dot(vec3 point)
+	{
+	cord = point;
+	}
+
+
+
+
+
+
+
