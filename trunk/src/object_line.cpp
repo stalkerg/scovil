@@ -19,9 +19,9 @@ void object_line::draw()
 	
 void object_line::draw_body()
 	{
-	glBegin (GL_LINES);
-	glVertex3f (cord.x, cord.y,cord.z);
-	glVertex3f (cord2.x,cord2.y ,cord2.z);
+	glBegin(GL_LINES);
+	glVertex3f(start.x, start.y, start.z);
+	glVertex3f(end.x, end.y, end.z);
 	glEnd ();
 	}
 
@@ -29,8 +29,6 @@ void object_line::draw_all()
 	{
 	std::list<object_container>::iterator object_iterator;
 	glPushMatrix();
-		glTranslatef(mat_cord.x, mat_cord.y,mat_cord.z);
-		glTranslatef(mat_cord2.x, mat_cord2.y,mat_cord2.z);
 		draw_body();
 
 		for(object_iterator=lower_objects.begin();
@@ -39,4 +37,23 @@ void object_line::draw_all()
 			object_iterator->p_object->draw();
 	glPopMatrix();
 	}
+
+object_line::object_line(float x1,float y1, float z1, float x2, float y2, float z2)
+	{
+	start.x = x1;
+	start.y = y1;
+	start.z = z1;
+	end.x = x2;
+	end.y = y2;
+	end.z = z2;
+	}
+
+object_line::object_line(vec3 in_start, vec3 in_end)
+	{
+	start = in_start;
+	end = in_end;
+	}
+
+
+
 

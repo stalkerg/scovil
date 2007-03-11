@@ -9,8 +9,9 @@
 class object_line: public object
 	{
 	public:
-	vec3 cord, mat_cord;
-	vec3 cord2, mat_cord2;
+	vec3 start, end;
+	object_line(float x1,float y1, float z1, float x2, float y2, float z2);
+	object_line(vec3 in_start, vec3 in_end);
 	virtual void draw();
 	void draw_body();
 	void draw_all();
