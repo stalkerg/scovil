@@ -35,7 +35,7 @@ void object_dot::draw_all()
 		draw_body();
 
 		for(object_iterator=lower_objects.begin();
-		    object_iterator==lower_objects.end();
+		    object_iterator!=lower_objects.end();
 		    ++object_iterator)
 			object_iterator->p_object->draw();
 	glPopMatrix();

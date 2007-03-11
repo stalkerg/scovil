@@ -15,17 +15,14 @@ void object_line::draw()
 		{
 		draw_body();
 		}
-	
 	}
 	
 void object_line::draw_body()
 	{
-	
 	glBegin (GL_LINES);
-  	glVertex3f (cord.x, cord.y,cord.z);
-  	glVertex3f (cord2.x,cord2.y ,cord2.z);
-  	glEnd ();
-
+	glVertex3f (cord.x, cord.y,cord.z);
+	glVertex3f (cord2.x,cord2.y ,cord2.z);
+	glEnd ();
 	}
 
 void object_line::draw_all()
@@ -37,7 +34,7 @@ void object_line::draw_all()
 		draw_body();
 
 		for(object_iterator=lower_objects.begin();
-		    object_iterator==lower_objects.end();
+		    object_iterator!=lower_objects.end();
 		    ++object_iterator)
 			object_iterator->p_object->draw();
 	glPopMatrix();
