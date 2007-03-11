@@ -21,7 +21,7 @@ void object_dot::draw()
 void object_dot::draw_body()
 	{
 	//glColor3f(1.0,1.0,1.0);
-	glPointSize(16);
+	glPointSize(size);
 	glBegin(GL_POINTS);
 		glVertex3f(cord.x, cord.y, cord.z);
 	glEnd();
@@ -41,16 +41,23 @@ void object_dot::draw_all()
 	glPopMatrix();
 	}
 
-object_dot::object_dot(float x, float y, float z)
+object_dot::object_dot(float x, float y, float z, GLint in_size)
 	{
 	cord.x = x;
 	cord.y = y;
 	cord.z = z;
+	size = in_size;
 	}
 
-object_dot::object_dot(vec3 point)
+object_dot::object_dot(vec3 point, GLint in_size)
 	{
 	cord = point;
+	size = in_size;
+	}
+
+object_dot::object_dot()
+	{
+	size = 1;
 	}
 
 
