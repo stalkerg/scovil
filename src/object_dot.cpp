@@ -21,7 +21,7 @@ void object_dot::draw()
 void object_dot::draw_body()
 	{
 	//glColor3f(1.0,1.0,1.0);
-	glPointSize(3);
+	glPointSize(16);
 	glBegin(GL_POINTS);
 		glVertex3f(cord.x, cord.y, cord.z);
 	glEnd();
