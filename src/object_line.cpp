@@ -20,12 +20,15 @@ void object_line::draw()
 void object_line::draw_body()
 	{
 	glLineWidth(width);
-	glBegin(GL_LINES);
-		glColor4f(start_color.r, start_color.g, start_color.b, start_color.a);
-		glVertex3f(start.x, start.y, start.z);
-		glColor4f(end_color.r, end_color.g, end_color.b, end_color.a);
-		glVertex3f(end.x, end.y, end.z);
-	glEnd ();
+	glPushMatrix();
+		glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
+		glBegin(GL_LINES);
+			glColor4f(start_color.r, start_color.g, start_color.b, start_color.a);
+			glVertex3f(start.x, start.y, start.z);
+			glColor4f(end_color.r, end_color.g, end_color.b, end_color.a);
+			glVertex3f(end.x, end.y, end.z);
+		glEnd ();
+	glPopMatrix();
 	}
 
 void object_line::draw_all()
