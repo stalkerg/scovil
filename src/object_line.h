@@ -8,10 +8,13 @@
 
 class object_line: public object
 	{
+	void default_num();
 	public:
-	vec3 start, end;
-	object_line(float x1,float y1, float z1, float x2, float y2, float z2);
+	vec3 start, end,  mat_cord;
+	color4 start_color, end_color;
+	GLint width;
 	object_line(vec3 in_start, vec3 in_end);
+	object_line();
 	virtual void draw();
 	void draw_body();
 	void draw_all();

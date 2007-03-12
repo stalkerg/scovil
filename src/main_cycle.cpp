@@ -19,6 +19,7 @@ int main_cycle(void *unused)
 		option = option | SDL_FULLSCREEN;
 	SDL_SetVideoMode(get_options()->win_w, get_options()->win_h, get_options()->bit, option);
 	SDL_EnableUNICODE(1);
+	SDL_WM_SetCaption(get_options()->name.c_str(),get_options()->long_name.c_str());
 
 	#ifdef __unix__
 	#else
@@ -31,9 +32,10 @@ int main_cycle(void *unused)
 		wglSwapIntervalEXT(0) ;
 		}
 	#endif
+	glShadeModel(GL_SMOOTH);
 	glEnable(GL_POINT_SMOOTH);
-	glEnable (GL_BLEND);
-	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_ALPHA_TEST);
 

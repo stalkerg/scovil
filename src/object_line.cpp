@@ -19,9 +19,12 @@ void object_line::draw()
 	
 void object_line::draw_body()
 	{
+	glLineWidth(width);
 	glBegin(GL_LINES);
-	glVertex3f(start.x, start.y, start.z);
-	glVertex3f(end.x, end.y, end.z);
+		glColor4f(start_color.r, start_color.g, start_color.b, start_color.a);
+		glVertex3f(start.x, start.y, start.z);
+		glColor4f(end_color.r, end_color.g, end_color.b, end_color.a);
+		glVertex3f(end.x, end.y, end.z);
 	glEnd ();
 	}
 
@@ -29,6 +32,7 @@ void object_line::draw_all()
 	{
 	std::list<object_container>::iterator object_iterator;
 	glPushMatrix();
+		glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
 		draw_body();
 
 		for(object_iterator=lower_objects.begin();
@@ -38,22 +42,24 @@ void object_line::draw_all()
 	glPopMatrix();
 	}
 
-object_line::object_line(float x1,float y1, float z1, float x2, float y2, float z2)
-	{
-	start.x = x1;
-	start.y = y1;
-	start.z = z1;
-	end.x = x2;
-	end.y = y2;
-	end.z = z2;
-	}
-
 object_line::object_line(vec3 in_start, vec3 in_end)
 	{
+	default_num();
 	start = in_start;
 	end = in_end;
 	}
 
+object_line::object_line()
+	{
+	default_num();
+	}
+
+void object_line::default_num()
+	{
+	width = 1;
+	start_color = color4(1.0, 1.0, 1.0, 1.0);
+	end_color = color4(1.0, 1.0, 1.0, 1.0);
+	}
 
 
 

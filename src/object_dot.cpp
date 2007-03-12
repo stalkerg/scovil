@@ -20,8 +20,8 @@ void object_dot::draw()
 
 void object_dot::draw_body()
 	{
-	//glColor3f(1.0,1.0,1.0);
-	glPointSize(size);
+	glColor4f(color.r, color.g, color.b, color.a);
+	glPointSize(size); //realy slow on some card
 	glBegin(GL_POINTS);
 		glVertex3f(cord.x, cord.y, cord.z);
 	glEnd();
@@ -41,26 +41,22 @@ void object_dot::draw_all()
 	glPopMatrix();
 	}
 
-object_dot::object_dot(float x, float y, float z, GLint in_size)
+object_dot::object_dot(vec3 point)
 	{
-	cord.x = x;
-	cord.y = y;
-	cord.z = z;
-	size = in_size;
-	}
-
-object_dot::object_dot(vec3 point, GLint in_size)
-	{
+	default_num();
 	cord = point;
-	size = in_size;
 	}
 
 object_dot::object_dot()
 	{
-	size = 1;
+	default_num();
 	}
 
-
+void object_dot::default_num()
+	{
+	size = 1;
+	color = color4(1.0, 1.0, 1.0, 1.0);
+	}
 
 
 
