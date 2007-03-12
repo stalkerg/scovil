@@ -29,10 +29,14 @@ first_object->add_object(dot2);
 
 //делаем ротик :)
 object_line *line1 = new object_line(vec3(0, 0, 0), vec3(0.5, 0.5, 0));
+line1->start_color = color4(1.0, 0.0, 0.0, 1.0);
+line1->end_color = color4(0.0, 0.0, 0.0, 1.0);
 line1->width=3;
 first_object->add_object(line1);
 
 object_line *line2 = new object_line(vec3(0, 0, 0), vec3(-0.5, 0.5, 0));
+line2->start_color = color4(1.0, 0.0, 0.0, 1.0);
+line2->end_color = color4(0.0, 0.0, 0.0, 1.0);
 line2->width=3;
 first_object->add_object(line2);
 
