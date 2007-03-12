@@ -9,6 +9,7 @@ struct options
 	{
 	unsigned short win_h, win_w, bit;
 	bool double_buffer, fullscreen;
+	std::string name, long_name;
 	};
 
 

@@ -19,7 +19,8 @@ void set_options(unsigned short win_w, unsigned short win_h, unsigned short bit,
 
 void set_caption(std::string name, std::string long_name)
 	{
-	SDL_WM_SetCaption(name.c_str(),long_name.c_str());
+	cur_options->name = name;
+	cur_options->long_name = long_name;
 	}
 
 SDL_Thread *init_cycle()

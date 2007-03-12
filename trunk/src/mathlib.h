@@ -181,9 +181,14 @@ struct vec3 {
 		struct {
 			float x,y,z;
 		};
+		struct {
+			float r,g,b;
+		};
 		float v[3];
 	};
 };
+
+typedef vec3 color3;
 
 /*
  */
@@ -267,9 +272,14 @@ struct vec4 {
 		struct {
 			float x,y,z,w;
 		};
+		struct {
+			float r,g,b,a;
+		};
 		float v[4];
 	};
 };
+
+typedef vec4 color4;
 
 /*
  */

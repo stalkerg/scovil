@@ -7,11 +7,12 @@
 
 class object_dot: public object
 	{
+	void default_num();
 	public:
 	vec3 cord, mat_cord;
+	color4 color;
 	GLint size;
-	object_dot(float x, float y, float z, GLint in_size=1);
-	object_dot(vec3 point, GLint in_size=1);
+	object_dot(vec3 point);
 	object_dot();
 	virtual void draw();
 	void draw_body();
