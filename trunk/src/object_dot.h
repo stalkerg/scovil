@@ -19,4 +19,19 @@ class object_dot: public object
 	void draw_all();
 	};
 
+#define DOT_CHANGE 1
+
+class  object_change_dot:public object_change
+	{
+	public:
+	object_change_dot();
+	object_dot *body_object_dot;
+	vec3 cord, mat_cord;
+	color4 color;
+	GLint size;
+	bool cord_change, mat_cord_change, color_change, size_change;
+	void apple(object_dot *in_dot);
+	};
+
 #endif
+
