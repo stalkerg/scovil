@@ -27,9 +27,7 @@ class  object_change_dot:public object_change
 	vec3 mat_cord;
 	color4 color;
 	GLint size;
-	
 	public:
-	
 	object_change_dot();
 	object_dot *body_object_dot;
 	void set_cord(vec3 in_cord);
