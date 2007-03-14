@@ -8,6 +8,7 @@
 class object_dot: public object
 	{
 	void default_num();
+	std::list<object_container>::iterator object_iterator;
 	public:
 	vec3 cord, mat_cord;
 	color4 color;
@@ -19,8 +20,6 @@ class object_dot: public object
 	void draw_all();
 	};
 
-#define DOT_CHANGE 1
-
 class  object_change_dot:public object_change
 	{
 	vec3 cord;
@@ -28,14 +27,14 @@ class  object_change_dot:public object_change
 	color4 color;
 	GLint size;
 	public:
-	object_change_dot();
+	object_change_dot(object_dot *in_object_dot);
 	object_dot *body_object_dot;
 	void set_cord(vec3 in_cord);
 	void set_mat_cord (vec3 in_mat_cord);
 	void set_color(color4 in_color);
 	void set_size(GLint in_size);
 	bool cord_change, mat_cord_change, color_change, size_change;
-	void apple(object_dot *in_dot);
+	virtual void apply();
 	};
 
 #endif
