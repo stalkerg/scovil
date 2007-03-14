@@ -58,6 +58,26 @@ void object_dot::default_num()
 	color = color4(1.0, 1.0, 1.0, 1.0);
 	}
 
+object_change_dot::object_change_dot()
+	{
+	set_id(DOT_CHANGE);
+	cord_change = false;
+	mat_cord_change = false;
+	color_change = false;
+	size_change = false;
+	}
+
+void object_change_dot::apple(object_dot *in_dot)
+	{
+	if (cord_change)
+		in_dot->cord = cord;
+	if (mat_cord_change)
+		in_dot->mat_cord = mat_cord;
+	if (color_change)
+		in_dot->color = color;
+	if (size_change)
+		in_dot->size = size;
+	}
 
 
 
