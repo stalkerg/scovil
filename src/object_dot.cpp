@@ -29,7 +29,6 @@ void object_dot::draw_body()
 
 void object_dot::draw_all()
 	{
-	std::list<object_container>::iterator object_iterator;
 	glPushMatrix();
 		glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
 		draw_body();
@@ -58,25 +57,25 @@ void object_dot::default_num()
 	color = color4(1.0, 1.0, 1.0, 1.0);
 	}
 
-object_change_dot::object_change_dot()
+object_change_dot::object_change_dot(object_dot *in_object_dot)
 	{
-	set_id(DOT_CHANGE);
 	cord_change = false;
 	mat_cord_change = false;
 	color_change = false;
 	size_change = false;
+	body_object_dot = in_object_dot;
 	}
 
-void object_change_dot::apple(object_dot *in_dot)
+void object_change_dot::apply()
 	{
 	if (cord_change)
-		in_dot->cord = cord;
+		body_object_dot->cord = cord;
 	if (mat_cord_change)
-		in_dot->mat_cord = mat_cord;
+		body_object_dot->mat_cord = mat_cord;
 	if (color_change)
-		in_dot->color = color;
+		body_object_dot->color = color;
 	if (size_change)
-		in_dot->size = size;
+		body_object_dot->size = size;
 	}
 
 void object_change_dot::set_cord(vec3 in_cord)

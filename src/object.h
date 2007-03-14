@@ -21,17 +21,12 @@ class object
 	void add_object(object *in_object);
 	};
 
-#define NULL_CHANGE 0
-
 class object_change
 	{
-	int id;
 	public:
-	object_change();
 	object *body_object_null, *upper_object;
 	bool upper_object_change;
-	int get_id();
-	void set_id(int in_id);
+	virtual void apply();
 	};
 
 #endif

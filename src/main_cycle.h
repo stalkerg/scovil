@@ -5,6 +5,6 @@
 
 int main_cycle(void *unused);
 void set_head_object(object *in_object);
-std::list<object_change> *get_change_list();
+void add_change(object_change *in_change);
 
 #endif
