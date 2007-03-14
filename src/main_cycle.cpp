@@ -4,6 +4,8 @@
 #include "init.h"
 
 object *main_object = NULL;
+static std::list<object_change> change_list;
+SDL_mutex *apple_mutex;
 
 int main_cycle(void *unused)
 	{
@@ -61,6 +63,9 @@ int main_cycle(void *unused)
 			{
 			main_object->draw();
 			SDL_GL_SwapBuffers();
+			SDL_LockMutex(apple_mutex);
+			
+			SDL_UnlockMutex(apple_mutex);
 			}
 		}
 	
@@ -71,4 +76,10 @@ void set_head_object(object *in_object)
 	{
 	main_object = in_object;
 	}
+
+std::list<object_change> *get_change_list()
+	{
+	return &change_list;
+	}
+
 
