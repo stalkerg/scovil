@@ -4,7 +4,7 @@
 #include "init.h"
 
 object *main_object = NULL;
-static std::list<object_change> change_list;
+static std::list<object_change*> change_list;
 SDL_mutex *apple_mutex;
 
 int main_cycle(void *unused)
@@ -41,6 +41,7 @@ int main_cycle(void *unused)
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_ALPHA_TEST);
 
+	std::list<object_change*>::iterator change_iterator;
 	int done=1;
 	while(done)
 		{
@@ -64,7 +65,13 @@ int main_cycle(void *unused)
 			main_object->draw();
 			SDL_GL_SwapBuffers();
 			SDL_LockMutex(apple_mutex);
-			
+			while (change_list.size())
+				{
+				change_iterator=change_list.begin();
+				(*change_iterator)->apply();
+				delete *change_iterator;
+				change_list.pop_front();
+				}
 			SDL_UnlockMutex(apple_mutex);
 			}
 		}
@@ -77,9 +84,9 @@ void set_head_object(object *in_object)
 	main_object = in_object;
 	}
 
-std::list<object_change> *get_change_list()
+void add_change(object_change *in_change)
 	{
-	return &change_list;
+	change_list.push_back(in_change);
 	}
 
 
