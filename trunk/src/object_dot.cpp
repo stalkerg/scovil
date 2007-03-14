@@ -80,28 +80,28 @@ void object_change_dot::apple(object_dot *in_dot)
 	}
 
 void object_change_dot::set_cord(vec3 in_cord)
-{
-cord_change = true;
-cord=in_cord;
-}
+	{
+	cord_change = true;
+	cord=in_cord;
+	}
 
 void object_change_dot::set_mat_cord (vec3 in_mat_cord)
-{
-mat_cord_change = true;
-mat_cord=in_mat_cord;
-}
+	{
+	mat_cord_change = true;
+	mat_cord=in_mat_cord;
+	}
 
 void object_change_dot::set_size(GLint in_size)
-{
-size_change = true;
-size=in_size;
-}
+	{
+	size_change = true;
+	size=in_size;
+	}
 
 void object_change_dot::set_color(color4 in_color)
-{
-color_change = true;
-color=in_color;
-}
+	{
+	color_change = true;
+	color=in_color;
+	}
 
 
 
