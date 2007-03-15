@@ -41,6 +41,7 @@ int main_cycle(void *unused)
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_ALPHA_TEST);
 
+	apple_mutex = SDL_CreateMutex();
 	std::list<object_change*>::iterator change_iterator;
 	int done=1;
 	while(done)
@@ -67,6 +68,7 @@ int main_cycle(void *unused)
 			SDL_LockMutex(apple_mutex);
 			while (change_list.size())
 				{
+				std::cout<<"change_list.size:"<<change_list.size()<<std::endl;
 				change_iterator=change_list.begin();
 				(*change_iterator)->apply();
 				delete *change_iterator;
@@ -75,7 +77,7 @@ int main_cycle(void *unused)
 			SDL_UnlockMutex(apple_mutex);
 			}
 		}
-	
+	SDL_DestroyMutex (apple_mutex);
 	return 0;
 	}
 
@@ -86,7 +88,9 @@ void set_head_object(object *in_object)
 
 void add_change(object_change *in_change)
 	{
+	SDL_LockMutex(apple_mutex);
 	change_list.push_back(in_change);
+	SDL_UnlockMutex(apple_mutex);
 	}
 
 
