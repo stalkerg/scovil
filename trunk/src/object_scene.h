@@ -6,13 +6,16 @@
 #include "object.h"
 #include "mathlib.h"
 
-class object_scene : public object
+namespace scovil
 	{
-	public:
-	vec2 resolution;
-	GLdouble near, far, aspect;
-	object_scene();
-	virtual void draw();
-	};
+	class object_scene : public object
+		{
+		public:
+		vec2 resolution;
+		GLdouble near, far, aspect;
+		object_scene();
+		virtual void draw();
+		};
+	}
 
 #endif
