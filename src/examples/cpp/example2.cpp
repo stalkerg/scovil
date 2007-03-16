@@ -1,11 +1,4 @@
-#include <SDL.h>
-#include "../../object.h"
-#include "../../init.h"
-#include "../../main_cycle.h"
-#include "../../object_scene.h"
-#include "../../object_dot.h"
-#include "../../object_line.h"
-#include "../../object_triangle.h"
+#include "../../scovil.h"
 
 
 int main()
@@ -37,8 +30,6 @@ dot2_change->set_size(16);
 dot2_change->set_color(color4(1.0, 0, 0, 1.0));
 dot2_change->set_upper_object(first_object);
 scovil::add_change(dot2_change);
-
-
 
 SDL_Delay(1000);
 float iter=0;
