@@ -21,6 +21,7 @@ namespace scovil
 		object *upper_object; //upper for this object
 		virtual void draw() {};
 		void add_object(object *in_object);
+		void del_object(object *in_object);
 		};
 
 	class object_change

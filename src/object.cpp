@@ -15,6 +15,21 @@ namespace scovil
 		lower_objects.push_back(in_object);
 		}
 
+	void object::del_object(object *in_object)
+		{
+		std::list<object_container>::iterator object_iterator;
+		for(object_iterator=lower_objects.begin();
+		    object_iterator!=lower_objects.end();
+		    ++object_iterator)
+			{
+			if (object_iterator->p_object==in_object)
+				{
+				lower_objects.erase(object_iterator);
+				break;
+				}
+			}
+		}
+
 	void object_change::apply()
 		{
 		//need more beer...
