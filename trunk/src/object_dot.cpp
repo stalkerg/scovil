@@ -83,8 +83,6 @@ namespace scovil
 
 	void object_change_dot::apply()
 		{
-//		if (!body_object_dot)
-//			body_object_dot = new object_dot;
 		if (cord_change)
 			body_object_dot->cord = cord;
 		if (mat_cord_change)

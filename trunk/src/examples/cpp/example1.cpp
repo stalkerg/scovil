@@ -1,11 +1,4 @@
-#include <SDL.h>
-#include "../../object.h"
-#include "../../init.h"
-#include "../../main_cycle.h"
-#include "../../object_scene.h"
-#include "../../object_dot.h"
-#include "../../object_line.h"
-#include "../../object_triangle.h"
+#include "../../scovil.h"
 
 
 int main()
