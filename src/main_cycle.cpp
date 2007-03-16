@@ -68,7 +68,6 @@ int main_cycle(void *unused)
 			SDL_LockMutex(apple_mutex);
 			while (change_list.size())
 				{
-				std::cout<<"change_list.size:"<<change_list.size()<<std::endl;
 				change_iterator=change_list.begin();
 				(*change_iterator)->apply();
 				delete *change_iterator;

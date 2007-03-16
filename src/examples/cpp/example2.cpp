@@ -39,7 +39,7 @@ while(iter<0.7)
 	add_change(dot2_change);
 	add_change(dot1_change);
 	iter+=0.01;
-	SDL_Delay(20);
+	SDL_Delay(50);
 	}
 
 SDL_WaitThread(cyle_thread, NULL);
