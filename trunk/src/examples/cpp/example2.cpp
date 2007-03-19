@@ -37,9 +37,6 @@ line1_change = new scovil::object_change_line();
 line1 = line1_change->body_object_line;
 line1_change->set_start(vec3(0.0, 0.0, 0.0));
 line1_change->set_end(vec3(1.0, 1.0, 1.0));
-//dot2_change->set_size(16);
-//dot2_change->set_color(color4(1.0, 0, 0, 1.0));
-//dot2_change->set_upper_object(first_object);
 line1_change->set_upper_object(first_object);
 scovil::add_change(line1_change);
 
