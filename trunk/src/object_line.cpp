@@ -65,6 +65,89 @@ namespace scovil
 		start_color = color4(1.0, 1.0, 1.0, 1.0);
 		end_color = color4(1.0, 1.0, 1.0, 1.0);
 		}
+	
+	object_change_line::object_change_line()
+		{
+		default_num();
+		body_object_line = new object_line;;//?
+		}
+	object_change_line::object_change_line(object_line *in_object_line)
+		{
+		default_num();
+		body_object_line = in_object_line;
+		}
+
+	void object_change_line::default_num()
+		{
+		start_change = false;
+		end_change = false;
+		mat_cord_change = false;
+		start_color_change = false;
+		end_color_change = false;
+		width_change = false;
+		}
+	
+	void object_change_line::apply()//?
+		{
+		if (start_change)
+			body_object_line->start = start;
+		if (end_change)
+			body_object_line->end = end;
+		if (mat_cord_change)
+			body_object_line->mat_cord = mat_cord;
+		if (start_color_change)
+			body_object_line->start_color = start_color;
+		if (upper_object_change)
+			{
+			if (body_object_line->upper_object)
+				upper_object->del_object(body_object_line);
+			body_object_line->upper_object = upper_object;
+			upper_object->add_object(body_object_line);
+			}
+		}
+
+	void object_change_line::set_start(vec3 in_start)
+		{
+		start_change = true;
+		start=in_start;
+		}
+
+	void object_change_line::set_end(vec3 in_end)
+		{
+		end_change = true;
+		end=in_end;
+		}
+	
+	void object_change_line::set_mat_cord(vec3 in_mat_cord)
+		{
+		mat_cord_change = true;
+		mat_cord=in_mat_cord;
+		}
+	
+	void object_change_line::set_start_color(color4 in_start_color)
+		{
+		start_color_change = true;
+		start_color=in_start_color;
+		}
+	
+	void object_change_line::set_end_color(color4 in_end_color)
+		{
+		end_color_change = true;
+		end_color=in_end_color;
+		}
+	
+	void object_change_line::set_width(GLint in_width)
+		{
+		width_change = true;
+		width=in_width;
+		}
+	
+	void object_change_line::set_upper_object(object*in_object)
+		{
+		upper_object_change = true;
+		upper_object = in_object;
+		}
+
 	}
 
 
