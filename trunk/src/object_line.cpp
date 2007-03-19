@@ -99,10 +99,10 @@ namespace scovil
 			body_object_line->start_color = start_color;
 		if (upper_object_change)
 			{
-			if (body_object_line->upper_object)
-				upper_object->del_object(body_object_line);
-			body_object_line->upper_object = upper_object;
-			upper_object->add_object(body_object_line);
+			if (body_object_line->upper_object) //Если есть верхний обьект.
+				upper_object->del_object(body_object_line); //То из него выписываем текущий.
+			body_object_line->upper_object = upper_object; //Переписываем указатель на верхнйи обьект.
+			upper_object->add_object(body_object_line); //Вписываем себя в верхний обьект.
 			}
 		}
 
