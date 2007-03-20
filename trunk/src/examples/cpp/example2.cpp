@@ -35,10 +35,26 @@ scovil::object_line *line1;
 scovil::object_change_line *line1_change;
 line1_change = new scovil::object_change_line();
 line1 = line1_change->body_object_line;
+
 line1_change->set_start(vec3(0.0, 0.0, 0.0));
 line1_change->set_end(vec3(1.0, 1.0, 1.0));
+line1_change->set_start_color(vec4(1.0, 1.0, 0.0,0.0));
+line1_change->set_width(13);
 line1_change->set_upper_object(first_object);
 scovil::add_change(line1_change);
+
+scovil::object_triangle *triangle1; 
+scovil::object_change_triangle *triangle1_change;
+triangle1_change = new scovil::object_change_triangle();
+triangle1 = triangle1_change->body_object_triangle;
+
+triangle1_change->set_cord1(vec3(0.0, 1.0, 0.0));
+triangle1_change->set_cord2(vec3(-1.0, 0.0, 0.0));
+triangle1_change->set_cord3(vec3(0.0, 0.0, -1.0));
+triangle1_change->set_mat_cord(vec3(0.0, 0.5, 0.0));
+triangle1_change->set_color1(vec3(0.0, 0.0, -1.0));
+triangle1_change->set_upper_object(first_object);
+scovil::add_change(triangle1_change);
 
 SDL_Delay(1000);
 float iter=0;
