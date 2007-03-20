@@ -46,7 +46,7 @@ namespace scovil
 			    ++object_iterator)
 				object_iterator->p_object->draw();
 		glPopMatrix();
-	}
+		}
 
 	object_triangle::object_triangle(vec3 in_cord1, vec3 in_cord2, vec3 in_cord3)
 		{
@@ -67,6 +67,106 @@ namespace scovil
 		color2 = color4(1.0, 1.0, 1.0, 1.0);
 		color3 = color4(1.0, 1.0, 1.0, 1.0);
 		}
+	
+
+	object_change_triangle::object_change_triangle()
+		{
+		default_num();
+		body_object_triangle = new object_triangle;;
+		}
+
+	object_change_triangle::object_change_triangle(object_triangle *in_object_triangle)
+		{
+		default_num();
+		body_object_triangle = in_object_triangle;
+		}
+
+	void object_change_triangle::default_num()
+		{
+		cord1_change = false;
+		cord2_change = false;
+		cord3_change = false;
+		mat_cord_change = false;
+		color1_change = false;
+		color2_change = false;
+		color3_change = false;
+		upper_object_change = false;
+		}
+
+	void object_change_triangle::apply()
+		{
+		if (cord1_change)
+			body_object_triangle->cord1 = cord1;
+		if (cord2_change)
+			body_object_triangle->cord2 = cord2;
+		if (cord3_change)
+			body_object_triangle->cord3 = cord3;
+		if (mat_cord_change)
+			body_object_triangle->mat_cord = mat_cord;
+		if (color1_change)
+			body_object_triangle->color1 = color1;
+		if (color2_change)
+			body_object_triangle->color2 = color2;
+		if (color3_change)
+			body_object_triangle->color3 = color3;
+		if (upper_object_change)
+			{
+			if (body_object_triangle->upper_object)
+				upper_object->del_object(body_object_triangle);
+			body_object_triangle->upper_object = upper_object;
+			upper_object->add_object(body_object_triangle);
+			}
+		}
+
+	void object_change_triangle::set_cord1(vec3 in_cord1)
+		{
+		cord1_change = true;
+		cord1=in_cord1;
+		}
+	
+	void object_change_triangle::set_cord2(vec3 in_cord2)
+		{
+		cord2_change = true;
+		cord2=in_cord2;
+		}
+	
+	void object_change_triangle::set_cord3(vec3 in_cord3)
+		{
+		cord3_change = true;
+		cord3=in_cord3;
+		}
+	
+	void object_change_triangle::set_mat_cord(vec3 in_mat_cord)
+		{
+		mat_cord_change = true;
+		mat_cord=in_mat_cord;
+		}
+
+	void object_change_triangle::set_color1(color4 in_color1)
+		{
+		color1_change = true;
+		color1=in_color1;
+		}
+
+	void object_change_triangle::set_color2(color4 in_color2)
+		{
+		color2_change = true;
+		color2=in_color2;
+		}
+	
+	void object_change_triangle::set_color3(color4 in_color3)
+		{
+		color3_change = true;
+		color3=in_color3;
+		}
+
+	void object_change_triangle::set_upper_object(object*in_object)
+		{
+		upper_object_change = true;
+		upper_object = in_object;
+		}
 	}
+
+
 
 
