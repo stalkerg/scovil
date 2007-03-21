@@ -20,5 +20,6 @@ namespace scovil
 	void set_caption(std::string name, std::string long_name);
 	options *get_options();
 	SDL_Thread *init_cycle();
+	int *get_null();
 	}
 #endif

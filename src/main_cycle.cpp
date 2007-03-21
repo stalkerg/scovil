@@ -72,7 +72,7 @@ namespace scovil
 					{
 					change_iterator=change_list.begin();
 					(*change_iterator)->apply();
-					delete *change_iterator;
+					//delete *change_iterator;
 					change_list.pop_front();
 					}
 				SDL_UnlockMutex(apple_mutex);
@@ -88,7 +88,7 @@ namespace scovil
 		}
 
 	void add_change(object_change *in_change)
-		{
+		{	
 		SDL_LockMutex(apple_mutex);
 		change_list.push_back(in_change);
 		SDL_UnlockMutex(apple_mutex);

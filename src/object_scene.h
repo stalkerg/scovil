@@ -5,6 +5,7 @@
 #include <GL/gl.h>
 #include "object.h"
 #include "mathlib.h"
+#include "init.h"
 
 namespace scovil
 	{
