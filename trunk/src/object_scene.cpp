@@ -3,7 +3,7 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include "object_scene.h"
-#include "init.h"
+
 
 namespace scovil
 	{
@@ -11,6 +11,9 @@ namespace scovil
 		{
 		resolution.x=get_options()->win_w;
 		resolution.y=get_options()->win_h;
+		near = 0.01;
+		far = 10000;
+		aspect = 90;
 		}
 
 	void object_scene::draw()

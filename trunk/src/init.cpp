@@ -7,11 +7,12 @@
 
 namespace scovil
 	{
-	static options *cur_options;
+	static options *cur_options = NULL;
 
 	void set_options(unsigned short win_w, unsigned short win_h, unsigned short bit, bool double_buffer, bool fullscreen)
 		{
-		cur_options = new options;
+		if (!cur_options)
+			cur_options = new options;
 		cur_options->win_w = win_w;
 		cur_options->win_h = win_h;
 		cur_options->bit = bit;
@@ -21,6 +22,8 @@ namespace scovil
 
 	void set_caption(std::string name, std::string long_name)
 		{
+		if (!cur_options)
+			cur_options = new options;
 		cur_options->name = name;
 		cur_options->long_name = long_name;
 		}
@@ -35,6 +38,11 @@ namespace scovil
 	options *get_options()
 		{
 		return cur_options;
+		}
+
+	int *get_null()
+		{
+		return NULL;
 		}
 	}
 
