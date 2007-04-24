@@ -38,4 +38,54 @@ namespace scovil
 			glPopMatrix();
 			}
 		}
+	
+	object_change_scene::object_change_scene(object_scene *in_object_scene)
+		{
+		default_num();
+		body_object_scene = in_object_scene;
+		}
+	
+	void object_change_scene::default_num()
+		{
+		resolution_change = false;
+		near_change = false;
+		far_change = false;
+		aspect_change = false;
+		}
+
+	void object_change_scene::set_resolution(vec2 in_resolution)
+		{
+		resolution_change = true;
+		resolution = in_resolution;
+		}
+
+	void object_change_scene::set_near(GLdouble in_near)
+		{
+		near_change = true;
+		near = in_near;
+		}
+
+	void object_change_scene::set_far(GLdouble in_far)
+		{
+		far_change = true;
+		far = in_far;
+		}
+
+	void object_change_scene::set_aspect(GLdouble in_aspect)
+		{
+		aspect_change = true;
+		aspect = in_aspect;
+		}
+
+	void object_change_scene::apply()
+		{
+		if (resolution_change)
+			body_object_scene->resolution = resolution;
+		if (near_change)
+			body_object_scene->near = near;
+		if (far_change)
+			body_object_scene->far = far;
+		if (aspect_change)
+			body_object_scene->aspect = aspect;
+		}
 	}
