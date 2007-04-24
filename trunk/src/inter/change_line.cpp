@@ -7,6 +7,8 @@ static scovil::object_change_line *top_change=NULL;
 
 void *create_change_line(void *in_object)
 	{
+	if (top_change)
+		commit_change_line();
 	if (in_object)
 		{
 		top_change = new scovil::object_change_line((scovil::object_line*)in_object);
