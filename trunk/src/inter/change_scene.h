@@ -12,3 +12,4 @@ void set_aspect_change_scene(float in_aspect);
 void commit_change_scene();
 
 #endif
+

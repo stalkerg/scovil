@@ -49,3 +49,5 @@ void commit_change_scene()
 	scovil::add_change(top_change);
 	top_change = NULL;
 	}
+
+
