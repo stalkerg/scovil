@@ -7,7 +7,7 @@ find_package(SDL_image REQUIRED)
 find_package(PNG REQUIRED)
 find_package(SWIG)
 
-
+#Pokemon Tets Server
 #INCLUDE(FindSWIG)
 #INCLUDE(UseSWIG)
 #POKEMON))) Test
