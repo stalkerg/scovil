@@ -23,7 +23,7 @@ namespace scovil
 		vec2 resolution;
 		GLdouble near, far, aspect;
 		bool resolution_change, near_change, far_change, aspect_change;
-		void default_num(); 
+		void default_num();
 		public:
 		object_change_scene(object_scene *in_object_scene);
 		object_scene *body_object_scene;
