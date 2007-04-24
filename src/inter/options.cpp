@@ -3,7 +3,7 @@
 #include "../main_cycle.h"
 
 void set_options(unsigned short win_w, unsigned short win_h,
-			 unsigned short bit, bool double_buffer, bool fullscreen)
+			 unsigned short bit, short double_buffer, short fullscreen)
 	{
 	scovil::set_options(win_w, win_h, bit, double_buffer, fullscreen);
 	}
@@ -18,4 +18,7 @@ void *init_cycle()
 	return scovil::init_cycle();
 	}
 
-
+void *get_null()
+	{
+	return NULL;
+	}
