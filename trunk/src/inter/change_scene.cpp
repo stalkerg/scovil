@@ -1,4 +1,4 @@
-#include "change_line.h"
+#include "change_scene.h"
 #include "../object.h"
 #include "../object_scene.h"
 #include "../main_cycle.h"
@@ -44,4 +44,8 @@ void set_aspect_change_scene(float in_aspect)
 		top_change->set_aspect(in_aspect);
 	}
 
-
+void commit_change_scene()
+	{
+	scovil::add_change(top_change);
+	top_change = NULL;
+	}
