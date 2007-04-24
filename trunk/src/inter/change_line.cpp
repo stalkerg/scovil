@@ -1,7 +1,7 @@
 #include "change_line.h"
 #include "../object.h"
 #include "../object_line.h"
-
+#include "../main_cycle.h"
 static scovil::object_change_line *top_change=NULL;
 
 void *create_change_line(void *in_object)
@@ -59,3 +59,8 @@ void set_end_color(float r, float g, float b, float a)
 
 	}
 
+void commit_change_line()
+	{
+	scovil::add_change(top_change);
+	top_change = NULL;
+	}
