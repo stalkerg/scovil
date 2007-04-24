@@ -10,6 +10,7 @@ find_package(SWIG)
 
 #INCLUDE(FindSWIG)
 #INCLUDE(UseSWIG)
+#POKEMON))) Test
 
 ADD_LIBRARY(scovil SHARED object.h object.cpp object_dot.h
 object_dot.cpp object_scene.h object_scene.cpp mathlib.cpp mathlib.h
