@@ -17,6 +17,15 @@ namespace scovil
 		object_scene();
 		virtual void draw();
 		};
+
+	class  object_change_scene:public object_change
+		{
+		vec2 resolution;
+		GLdouble near, far, aspect;
+		bool resolution_change, near_change, far_change, aspect_change;
+		public:
+		
+		}
 	}
 
 #endif
