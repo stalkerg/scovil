@@ -1,6 +1,5 @@
 // Object class cppfile
 #include <iostream>
-#include <GL/gl.h>
 #include "object_dot.h"
 
 namespace scovil
