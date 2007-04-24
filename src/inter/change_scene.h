@@ -1,5 +1,5 @@
-#ifndef I_CHANGE_DOT
-#define I_CHANGE_DOT
+#ifndef I_CHANGE_SCENE
+#define I_CHANGE_SCENE
 
 void *create_scene();
 
@@ -9,5 +9,6 @@ void set_resolution_change_scene(int x, int y);
 void set_near_change_scene(float in_near);
 void set_far_change_scene(float in_far);
 void set_aspect_change_scene(float in_aspect);
+void commit_change_scene();
 
 #endif
