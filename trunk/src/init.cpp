@@ -16,7 +16,7 @@ namespace scovil
 		cur_options->win_w = win_w;
 		cur_options->win_h = win_h;
 		cur_options->bit = bit;
-		cur_options->double_buffer=fullscreen;
+		cur_options->double_buffer=double_buffer;
 		cur_options->fullscreen=fullscreen;
 		}
 
