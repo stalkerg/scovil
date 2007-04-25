@@ -97,6 +97,10 @@ namespace scovil
 			body_object_line->mat_cord = mat_cord;
 		if (start_color_change)
 			body_object_line->start_color = start_color;
+		if (end_color_change)
+			body_object_line->end_color = end_color;
+		if (width_change)
+			body_object_line->width = width;
 		if (upper_object_change)
 			{
 			if (body_object_line->upper_object) //Если есть верхний обьект.
