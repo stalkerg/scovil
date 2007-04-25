@@ -43,21 +43,21 @@ void set_mat_cord_change_line(float x, float y, float z)
 
 	}
 
-void set_width_change(int in_width)
+void set_width_change_line(int in_width)
 	{
 	if (top_change)
 		top_change->set_width(in_width);
 
 	}
 
-void set_start_color_change(float r, float g, float b, float a)
+void set_start_color_change_line(float r, float g, float b, float a)
 	{
 	if (top_change)
 		top_change->set_start_color(color4(r, g, b, a));
 
 	}
 
-void set_end_color_change(float r, float g, float b, float a)
+void set_end_color_change_line(float r, float g, float b, float a)
 	{
 	if (top_change)
 		top_change->set_end_color(color4(r, g, b, a));
