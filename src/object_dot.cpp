@@ -78,6 +78,7 @@ namespace scovil
 		color_change = false;
 		size_change = false;
 		upper_object_change = false;
+		delete_lower = false;
 		}
 
 	void object_change_dot::apply()
@@ -97,6 +98,8 @@ namespace scovil
 			body_object_dot->upper_object = upper_object;
 			upper_object->add_object(body_object_dot);
 			}
+		if (delete_lower)
+			body_object_dot->del_object(delete_lower_object);
 		}
 
 	void object_change_dot::set_cord(vec3 in_cord)
@@ -123,10 +126,16 @@ namespace scovil
 		color=in_color;
 		}
 
-	void object_change_dot::set_upper_object(object*in_object)
+	void object_change_dot::set_upper_object(object *in_object)
 		{
 		upper_object_change = true;
 		upper_object = in_object;
+		}
+
+	void object_change_dot::set_delete_lower_object(object *in_object)
+		{
+		delete_lower = true;
+		delete_lower_object = in_object;
 		}
 	}
 

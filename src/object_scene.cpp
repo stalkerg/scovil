@@ -51,6 +51,7 @@ namespace scovil
 		near_change = false;
 		far_change = false;
 		aspect_change = false;
+		delete_lower = false;
 		}
 
 	void object_change_scene::set_resolution(vec2 in_resolution)
@@ -77,6 +78,12 @@ namespace scovil
 		aspect = in_aspect;
 		}
 
+	void object_change_scene::set_delete_lower_object(object *in_object)
+		{
+		delete_lower = true;
+		delete_lower_object = in_object;
+		}
+
 	void object_change_scene::apply()
 		{
 		if (resolution_change)
@@ -87,5 +94,7 @@ namespace scovil
 			body_object_scene->far = far;
 		if (aspect_change)
 			body_object_scene->aspect = aspect;
+		if (delete_lower)
+			body_object_scene->del_object(delete_lower_object);
 		}
 	}

@@ -8,6 +8,9 @@ namespace scovil
 	object *main_object = NULL;
 	static std::list<object_change*> change_list;
 	SDL_mutex *apple_mutex;
+	int fps=0, ticknow=0, ticklast=0;
+	float bfps=0;
+	
 
 	int main_cycle(void *unused)
 		{
@@ -76,6 +79,17 @@ namespace scovil
 					change_list.pop_front();
 					}
 				SDL_UnlockMutex(apple_mutex);
+				}
+
+			ticklast=ticknow;
+			ticknow=SDL_GetTicks();
+			bfps+=(ticknow-ticklast);
+			++fps;
+			if (bfps>1000)
+				{
+				std::cout<<"FPS:"<<fps<<std::endl;
+				fps = 0;
+				bfps = 0;
 				}
 			}
 		SDL_DestroyMutex (apple_mutex);
