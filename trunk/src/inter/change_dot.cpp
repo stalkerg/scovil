@@ -21,6 +21,12 @@ void *create_change_dot(void *in_object)
 		}
 	}
 
+void set_delete_lower_object_change_dot(void *in_object)
+	{
+	if (top_change && in_object)
+		top_change->set_delete_lower_object((scovil::object_dot*)in_object);
+	}
+
 void set_cord_change_dot(float x, float y, float z)
 	{
 	if (top_change)

@@ -28,7 +28,7 @@ namespace scovil
 		vec3 mat_cord;
 		color4 color;
 		GLint size;
-		bool cord_change, mat_cord_change, color_change, size_change;
+		bool cord_change, mat_cord_change, color_change, size_change, delete_lower;
 		void default_num();
 		public:
 		object_change_dot();
@@ -39,6 +39,7 @@ namespace scovil
 		void set_color(color4 in_color);
 		void set_size(GLint in_size);
 		void set_upper_object(object *in_object);
+		void set_delete_lower_object(object *in_object);
 		
 		virtual void apply();
 		};

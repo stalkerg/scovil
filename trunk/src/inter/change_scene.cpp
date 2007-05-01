@@ -12,6 +12,12 @@ void *create_scene()
 	return first_object;
 	}
 
+void set_delete_lower_object_change_scene(void *in_object)
+	{
+	if (top_change && in_object)
+		top_change->set_delete_lower_object((scovil::object_scene*)in_object);
+	}
+
 void create_change_scene(void *in_object)
 	{
 	if (in_object)

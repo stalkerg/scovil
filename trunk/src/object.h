@@ -28,7 +28,7 @@ namespace scovil
 	class object_change
 		{
 		public:
-		object *body_object_null, *upper_object;
+		object *body_object_null, *upper_object, *delete_lower_object;
 		bool upper_object_change;
 		virtual void apply();
 		};

@@ -5,10 +5,42 @@ pyinterscovil.set_caption("Python Test1", "Python Test")
 first_object = pyinterscovil.create_scene()
 cyle_thread = pyinterscovil.init_cycle()
 
+#pyinterscovil.create_change_dot(pyinterscovil.get_null())
+#pyinterscovil.set_cord_change_dot(0, 0, -1)
+#pyinterscovil.set_size_change_dot(6)
+#pyinterscovil.set_upper_object_change_dot(first_object)
+#pyinterscovil.commit_change_dot()
+
 pyinterscovil.create_change_dot(pyinterscovil.get_null())
-pyinterscovil.set_cord_change_dot(0, 0, -1)
+pyinterscovil.set_cord_change_dot(10, 15, 20)
 pyinterscovil.set_size_change_dot(6)
 pyinterscovil.set_upper_object_change_dot(first_object)
+
+pyinterscovil.create_change_dot(pyinterscovil.get_null())
+pyinterscovil.set_cord_change_dot(20, 15, 10)
+pyinterscovil.set_size_change_dot(6)
+pyinterscovil.set_upper_object_change_dot(first_object)
+
+pyinterscovil.create_change_dot(pyinterscovil.get_null())
+pyinterscovil.set_cord_change_dot(9, 7, 30)
+pyinterscovil.set_size_change_dot(6)
+pyinterscovil.set_upper_object_change_dot(first_object)
+
+pyinterscovil.create_change_dot(pyinterscovil.get_null())
+pyinterscovil.set_cord_change_dot(25, 20, 6)
+pyinterscovil.set_size_change_dot(6)
+pyinterscovil.set_upper_object_change_dot(first_object)
+
+pyinterscovil.create_change_dot(pyinterscovil.get_null())
+pyinterscovil.set_cord_change_dot(15, 15, 15)
+pyinterscovil.set_size_change_dot(6)
+pyinterscovil.set_upper_object_change_dot(first_object)
+
+pyinterscovil.create_change_dot(pyinterscovil.get_null())
+pyinterscovil.set_cord_change_dot(30, 7, 10)
+pyinterscovil.set_size_change_dot(6)
+pyinterscovil.set_upper_object_change_dot(first_object)
+
 pyinterscovil.commit_change_dot()
 
 line1 = pyinterscovil.create_change_line(pyinterscovil.get_null())
