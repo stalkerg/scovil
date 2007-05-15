@@ -10,6 +10,8 @@ namespace scovil
 	SDL_mutex *apple_mutex;
 	int fps=0, ticknow=0, ticklast=0;
 	float bfps=0;
+	camera *current_camera=NULL;
+	
 	
 
 	int main_cycle(void *unused)
@@ -68,6 +70,8 @@ namespace scovil
 				}
 			if(main_object)
 				{
+				if (current_camera)
+					glLoadMatrixf(current_camera->matrix);
 				main_object->draw();
 				SDL_GL_SwapBuffers();
 				SDL_LockMutex(apple_mutex);
@@ -106,6 +110,11 @@ namespace scovil
 		SDL_LockMutex(apple_mutex);
 		change_list.push_back(in_change);
 		SDL_UnlockMutex(apple_mutex);
+		}
+
+	void set_current_camera(camera *in_camera)
+		{
+		current_camera = in_camera;
 		}
 	}
 
