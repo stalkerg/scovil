@@ -15,7 +15,7 @@ find_package(SWIG)
 ADD_LIBRARY(scovil SHARED object.h object.cpp object_dot.h
 object_dot.cpp object_scene.h object_scene.cpp mathlib.cpp mathlib.h
 init.cpp init.h main_cycle.cpp main_cycle.h object_line.h object_line.cpp
-object_triangle.h object_triangle.cpp object_quads.h object_quads.cpp 
+object_triangle.h object_triangle.cpp object_quad.h object_quad.cpp 
 camera.h camera.cpp)
 
 
