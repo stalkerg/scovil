@@ -32,6 +32,7 @@ namespace scovil
 		{
 		glPushMatrix();
 			glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
+			glMultMatrixf(rot_mat);
 			draw_body();
 
 			for(object_iterator=lower_objects.begin();
@@ -75,6 +76,7 @@ namespace scovil
 		{
 		cord_change = false;
 		mat_cord_change = false;
+		direction_change = false;
 		color_change = false;
 		size_change = false;
 		upper_object_change = false;
@@ -87,6 +89,11 @@ namespace scovil
 			body_object_dot->cord = cord;
 		if (mat_cord_change)
 			body_object_dot->mat_cord = mat_cord;
+		if (direction_change)
+			{
+			body_object_dot->direction = direction;
+			body_object_dot->rot_mat = mat4(mat3(direction));
+			}
 		if (color_change)
 			body_object_dot->color = color;
 		if (size_change)
@@ -105,25 +112,31 @@ namespace scovil
 	void object_change_dot::set_cord(vec3 in_cord)
 		{
 		cord_change = true;
-		cord=in_cord;
+		cord = in_cord;
 		}
 
 	void object_change_dot::set_mat_cord (vec3 in_mat_cord)
 		{
 		mat_cord_change = true;
-		mat_cord=in_mat_cord;
+		mat_cord = in_mat_cord;
+		}
+
+	void object_change_dot::set_direction(quat in_direction)
+		{
+		direction_change = true;
+		direction = in_direction;
 		}
 
 	void object_change_dot::set_size(GLint in_size)
 		{
 		size_change = true;
-		size=in_size;
+		size = in_size;
 		}
 
 	void object_change_dot::set_color(color4 in_color)
 		{
 		color_change = true;
-		color=in_color;
+		color = in_color;
 		}
 
 	void object_change_dot::set_upper_object(object *in_object)

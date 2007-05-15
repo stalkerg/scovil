@@ -57,12 +57,12 @@ namespace scovil
 				switch(event.type)
 					{
 					case SDL_QUIT:
-						done = 0;
+						//done = 0;
 						break;
 					case SDL_KEYDOWN:
 						if ( event.key.keysym.sym == SDLK_ESCAPE )
 							{
-							done = 0;
+							//done = 0;
 							}
 					}
 				}

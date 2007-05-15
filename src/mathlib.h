@@ -20,6 +20,8 @@
 #ifndef __MATHLIB_H__
 #define __MATHLIB_H__
 
+#include <iostream>
+
 #include <math.h>
 #ifdef _WIN32
 #pragma warning(disable: 4244)
@@ -221,6 +223,10 @@ inline vec3 saturate(const vec3 &v) {
 	return ret;
 }
 
+inline void print_math(const vec3 &in_vec) {
+std::cout<<"["<<in_vec.x<<","<<in_vec.y<<","<<in_vec.z<<"]";
+}
+
 /*****************************************************************************/
 /*                                                                           */
 /* vec4                                                                      */
@@ -332,6 +338,10 @@ inline vec4 saturate(const vec4 &v) {
 	if(ret.w < 0.0) ret.w = 0.0;
 	else if(ret.w > 1.0f) ret.w = 1.0f;
 	return ret;
+}
+
+inline void print_math(const vec4 &in_vec) {
+std::cout<<"["<<in_vec.x<<","<<in_vec.y<<","<<in_vec.z<<","<<in_vec.w<<"]";
 }
 
 /*****************************************************************************/
