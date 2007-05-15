@@ -57,31 +57,31 @@ void set_direction_change_quads(float x, float y, float z, float angle)
 		top_change->set_direction(quat(vec3(x, y, z), angle));
 	}
 
-void set_color_cord1_change_quads(float r, float g, float b, float a)
+void set_color1_change_quads(float r, float g, float b, float a)
 	{
 	if (top_change)
-		top_change->set_color_cord1(color4(r, g, b, a));
+		top_change->set_color1(color4(r, g, b, a));
 
 	}
 
-void set_color_cord2_change_quads(float r, float g, float b, float a)
+void set_color2_change_quads(float r, float g, float b, float a)
 	{
 	if (top_change)
-		top_change->set_color_cord2(color4(r, g, b, a));
+		top_change->set_color2(color4(r, g, b, a));
 
 	}
 
-void set_color_cord3_change_quads(float r, float g, float b, float a)
+void set_color3_change_quads(float r, float g, float b, float a)
 	{
 	if (top_change)
-		top_change->set_color_cord3(color4(r, g, b, a));
+		top_change->set_color3(color4(r, g, b, a));
 
 	}
 
-void set_color_cord4_change_quads(float r, float g, float b, float a)
+void set_color4_change_quads(float r, float g, float b, float a)
 	{
 	if (top_change)
-		top_change->set_color_cord4(color4(r, g, b, a));
+		top_change->set_color4(color4(r, g, b, a));
 
 	}
 
