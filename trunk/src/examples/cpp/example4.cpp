@@ -16,10 +16,10 @@ set_cord2_change_quads(0.0, 0.5, -1.0);
 set_cord3_change_quads(0.5, 0.5, -1.0);
 set_cord4_change_quads(0.5, 0.0, -1.0);
 set_mat_cord_change_quads(0.0, 0.0, 0.0);
-set_color_cord1_change_quads(0.0, 0.0, 1.0, 1.0);
-set_color_cord2_change_quads(0.0, 1.0, 0.0, 1.0);
-set_color_cord3_change_quads(1.0, 0.0, 0.0, 1.0);
-set_color_cord4_change_quads(1.0, 0.0, 0.0, 1.0);
+set_color1_change_quads(0.0, 0.0, 1.0, 1.0);
+set_color2_change_quads(0.0, 1.0, 0.0, 1.0);
+set_color3_change_quads(1.0, 0.0, 0.0, 1.0);
+set_color4_change_quads(1.0, 0.0, 0.0, 1.0);
 set_upper_object_change_quads(first_object);
 commit_change_quads();
 

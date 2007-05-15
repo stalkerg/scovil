@@ -99,10 +99,10 @@ namespace scovil
 		cord4_change = false;
 		mat_cord_change = false;
 		direction_change = false;
-		color_cord1_change = false;
-		color_cord2_change = false;
-		color_cord3_change = false;
-		color_cord4_change = false;
+		color1_change = false;
+		color2_change = false;
+		color3_change = false;
+		color4_change = false;
 		upper_object_change = false;
 		}
 
@@ -123,13 +123,13 @@ namespace scovil
 			body_object_quads->direction = direction;
 			body_object_quads->rot_mat = mat4(mat3(direction));
 			}
-		if (color_cord1_change)
+		if (color1_change)
 			body_object_quads->color_cord1 = color_cord1;
-		if (color_cord2_change)
+		if (color2_change)
 			body_object_quads->color_cord2 = color_cord2;
-		if (color_cord3_change)
+		if (color3_change)
 			body_object_quads->color_cord3 = color_cord3;
-		if (color_cord4_change)
+		if (color4_change)
 			body_object_quads->color_cord4 = color_cord4;
 		if (upper_object_change)
 			{
@@ -175,27 +175,27 @@ namespace scovil
 		direction = in_direction;
 		}
 
-	void object_change_quads::set_color_cord1(color4 in_color_cord1)
+	void object_change_quads::set_color1(color4 in_color1)
 		{
-		color_cord1_change = true;
-		color_cord1=in_color_cord1;
+		color1_change = true;
+		color_cord1=in_color1;
 		}
 
-	void object_change_quads::set_color_cord2(color4 in_color_cord2)
+	void object_change_quads::set_color2(color4 in_color2)
 		{
-		color_cord2_change = true;
-		color_cord2=in_color_cord2;
+		color2_change = true;
+		color_cord2=in_color2;
 		}
 	
-	void object_change_quads::set_color_cord3(color4 in_color_cord3)
+	void object_change_quads::set_color3(color4 in_color3)
 		{
-		color_cord3_change = true;
-		color_cord3=in_color_cord3;
+		color3_change = true;
+		color_cord3=in_color3;
 		}
-	void object_change_quads::set_color_cord4(color4 in_color_cord4)
+	void object_change_quads::set_color4(color4 in_color4)
 		{
-		color_cord4_change = true;
-		color_cord4=in_color_cord4;
+		color4_change = true;
+		color_cord4=in_color4;
 		}
 
 	void object_change_quads::set_upper_object(object*in_object)

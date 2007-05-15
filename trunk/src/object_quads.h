@@ -28,7 +28,7 @@ namespace scovil
 		vec3 cord1, cord2, cord3, cord4, mat_cord;
 		quat direction;
 		color4 color_cord1, color_cord2, color_cord3, color_cord4;
-		bool direction_change, cord1_change, cord2_change, cord3_change, cord4_change, mat_cord_change, color_cord1_change, color_cord2_change, color_cord3_change, color_cord4_change;
+		bool direction_change, cord1_change, cord2_change, cord3_change, cord4_change, mat_cord_change, color1_change, color2_change, color3_change, color4_change;
 		void default_num();
 		public:
 		object_change_quads();
@@ -40,10 +40,10 @@ namespace scovil
 		void set_cord4(vec3 in_cord4);
 		void set_mat_cord(vec3 in_mat_cord);
 		void set_direction(quat in_direction);
-		void set_color_cord1(color4 in_color_cord1);
-		void set_color_cord2(color4 in_color_cord2);
-		void set_color_cord3(color4 in_color_cord3);
-		void set_color_cord4(color4 in_color_cord4);
+		void set_color1(color4 in_color1);
+		void set_color2(color4 in_color2);
+		void set_color3(color4 in_color3);
+		void set_color4(color4 in_color4);
 		void set_upper_object(object *in_object);
 		
 		virtual void apply();
