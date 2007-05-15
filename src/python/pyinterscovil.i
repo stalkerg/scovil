@@ -16,5 +16,5 @@
 #include "../inter/change_dot.h"
 #include "../inter/change_line.h"
 #include "../inter/change_triangle.h"
-#include "../inter/change_quads.h"
+#include "../inter/change_quad.h"
 #include "../inter/change_camera.h"
