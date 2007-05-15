@@ -11,12 +11,12 @@ SDL_Thread *cyle_thread = (SDL_Thread *)init_cycle();
 ////SDL_Delay(2000);
 
 create_change_quads(NULL);
-set_cord1_change_quads(0.0, 0.0, 0.0);
-set_cord2_change_quads(1.0, 0.0, 0.0);
-set_cord3_change_quads(0.0, 0.0, -1.0);
-set_cord4_change_quads(0.0, 0.0, -2.0);
-set_mat_cord_change_quads(0.0, 0.4, 0.0);
-set_color_a_change_quads(0.0, 0.0, -1.0, 1.0);
+set_cord1_change_quads(0.0, 0.0, -1.0);
+set_cord2_change_quads(0.0, 0.5, -1.0);
+set_cord3_change_quads(0.5, 0.5, -1.0);
+set_cord4_change_quads(0.5, 0.0, -1.0);
+set_mat_cord_change_quads(0.0, 0.0, 0.0);
+set_color_a_change_quads(0.0, 0.0, 1.0, 1.0);
 set_color_b_change_quads(0.0, 1.0, 0.0, 1.0);
 set_color_c_change_quads(1.0, 0.0, 0.0, 1.0);
 set_color_d_change_quads(1.0, 0.0, 0.0, 1.0);
