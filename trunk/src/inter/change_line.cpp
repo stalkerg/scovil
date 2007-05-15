@@ -43,6 +43,12 @@ void set_mat_cord_change_line(float x, float y, float z)
 
 	}
 
+void set_direction_change_line(float x, float y, float z, float angle)
+	{
+	if (top_change)
+		top_change->set_direction(quat(vec3(x, y, z), angle));
+	}
+
 void set_width_change_line(int in_width)
 	{
 	if (top_change)

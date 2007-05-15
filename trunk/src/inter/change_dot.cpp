@@ -33,6 +33,12 @@ void set_cord_change_dot(float x, float y, float z)
 		top_change->set_cord(vec3(x, y, z));
 	}
 
+void set_direction_change_dot(float x, float y, float z, float angle)
+	{
+	if (top_change)
+		top_change->set_direction(quat(vec3(x, y, z), angle));
+	}
+
 void set_mat_cord_change_dot(float x, float y, float z)
 	{
 	if (top_change)

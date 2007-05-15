@@ -2,12 +2,17 @@
 #include <GL/gl.h>
 #include "object_triangle.h"
 
+//#define DEBUG
+
 namespace scovil
 	{
 	void object_triangle::draw()
 		{
 		#ifdef DEBUG
 		std::cout<<"object_triangle draw()"<<std::endl;
+		print_math(cord1); std::cout<<" ";
+		print_math(cord2); std::cout<<" ";
+		print_math(cord3); std::cout<<std::endl;
 		#endif
 		if(lower_objects.size())
 			{
@@ -19,10 +24,11 @@ namespace scovil
 			}
 		}
 
-	void object_triangle::draw_body()
+	void object_triangle::draw_body(bool notall)
 		{
 		glPushMatrix();
 			glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
+			glMultMatrixf(rot_mat);
 			glBegin(GL_TRIANGLES);
 				glColor4f(color1.r, color1.g, color1.b, color1.a);
 				glVertex3f(cord1.x, cord1.y, cord1.z);
@@ -31,20 +37,19 @@ namespace scovil
 				glColor4f(color3.r, color3.g, color3.b, color3.a);
 				glVertex3f(cord3.x, cord3.y, cord3.z);
 			glEnd ();
-		glPopMatrix();
+		if (notall)
+			glPopMatrix();
 		}
 
 	void object_triangle::draw_all()
 		{
 		std::list<object_container>::iterator object_iterator;
-		glPushMatrix();
-			glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
-			draw_body();
+		draw_body(false);
 
-			for(object_iterator=lower_objects.begin();
-			    object_iterator!=lower_objects.end();
-			    ++object_iterator)
-				object_iterator->p_object->draw();
+		for(object_iterator=lower_objects.begin();
+		    object_iterator!=lower_objects.end();
+		    ++object_iterator)
+			object_iterator->p_object->draw();
 		glPopMatrix();
 		}
 
@@ -87,6 +92,7 @@ namespace scovil
 		cord2_change = false;
 		cord3_change = false;
 		mat_cord_change = false;
+		direction_change = false;
 		color1_change = false;
 		color2_change = false;
 		color3_change = false;
@@ -103,6 +109,11 @@ namespace scovil
 			body_object_triangle->cord3 = cord3;
 		if (mat_cord_change)
 			body_object_triangle->mat_cord = mat_cord;
+		if (direction_change)
+			{
+			body_object_triangle->direction = direction;
+			body_object_triangle->rot_mat = mat4(mat3(direction));
+			}
 		if (color1_change)
 			body_object_triangle->color1 = color1;
 		if (color2_change)
@@ -140,6 +151,12 @@ namespace scovil
 		{
 		mat_cord_change = true;
 		mat_cord=in_mat_cord;
+		}
+
+	void object_change_triangle::set_direction(quat in_direction)
+		{
+		direction_change = true;
+		direction = in_direction;
 		}
 
 	void object_change_triangle::set_color1(color4 in_color1)

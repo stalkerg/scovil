@@ -36,13 +36,19 @@ void set_cord2_change_triangle(float x2, float y2, float z2)
 void set_cord3_change_triangle(float x3, float y3, float z3)
 	{
 	if (top_change)
-		top_change->set_cord1(vec3(x3, y3, z3));
+		top_change->set_cord3(vec3(x3, y3, z3));
 	}
 
 void set_mat_cord_change_triangle(float x, float y, float z)
 	{
 	if (top_change)
 		top_change->set_mat_cord(vec3(x, y, z));
+	}
+
+void set_direction_change_triangle(float x, float y, float z, float angle)
+	{
+	if (top_change)
+		top_change->set_direction(quat(vec3(x, y, z), angle));
 	}
 
 void set_color1_change_triangle(float r, float g, float b, float a)

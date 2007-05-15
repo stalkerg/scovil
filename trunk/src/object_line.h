@@ -11,25 +11,25 @@ namespace scovil
 		{
 		void default_num();
 		public:
-		vec3 start, end,  mat_cord;
+		vec3 start, end, mat_cord;
+		quat direction;
+		mat4 rot_mat;
 		color4 start_color, end_color;
 		GLint width;
 		object_line(vec3 in_start, vec3 in_end);
 		object_line();
 		virtual void draw();
-		void draw_body();
+		void draw_body(bool notall=true);
 		void draw_all();
 		};
 	
 	class  object_change_line:public object_change
 		{
-		vec3 start;
-		vec3 end;
-		vec3 mat_cord;
-		color4 start_color;
-		color4 end_color;
+		vec3 start, end, mat_cord;
+		quat direction;
+		color4 start_color, end_color;
 		GLint width;
-		bool start_change, end_change, mat_cord_change, start_color_change, end_color_change, width_change;
+		bool direction_change, start_change, end_change, mat_cord_change, start_color_change, end_color_change, width_change;
 		void default_num();
 		public:
 		object_change_line();
@@ -38,6 +38,7 @@ namespace scovil
 		void set_start(vec3 in_start);
 		void set_end(vec3 in_end);
 		void set_mat_cord(vec3 in_mat_cord);
+		void set_direction(quat in_direction);
 		void set_start_color(color4 in_start_color);
 		void set_end_color(color4 in_end_color);
 		void set_width(GLint in_width);

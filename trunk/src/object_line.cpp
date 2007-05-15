@@ -19,31 +19,31 @@ namespace scovil
 			}
 		}
 
-	void object_line::draw_body()
+	void object_line::draw_body(bool notall)
 		{
 		glLineWidth(width);
 		glPushMatrix();
 			glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
+			glMultMatrixf(rot_mat);
 			glBegin(GL_LINES);
 				glColor4f(start_color.r, start_color.g, start_color.b, start_color.a);
 				glVertex3f(start.x, start.y, start.z);
 				glColor4f(end_color.r, end_color.g, end_color.b, end_color.a);
 				glVertex3f(end.x, end.y, end.z);
 			glEnd ();
-		glPopMatrix();
+		if (notall)
+			glPopMatrix();
 		}
 
 	void object_line::draw_all()
 		{
 		std::list<object_container>::iterator object_iterator;
-		glPushMatrix();
-			glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
-			draw_body();
+		draw_body(false);
 
-			for(object_iterator=lower_objects.begin();
-			    object_iterator!=lower_objects.end();
-			    ++object_iterator)
-				object_iterator->p_object->draw();
+		for(object_iterator=lower_objects.begin();
+		    object_iterator!=lower_objects.end();
+		    ++object_iterator)
+			object_iterator->p_object->draw();
 		glPopMatrix();
 		}
 
@@ -82,6 +82,7 @@ namespace scovil
 		start_change = false;
 		end_change = false;
 		mat_cord_change = false;
+		direction_change = false;
 		start_color_change = false;
 		end_color_change = false;
 		width_change = false;
@@ -95,6 +96,11 @@ namespace scovil
 			body_object_line->end = end;
 		if (mat_cord_change)
 			body_object_line->mat_cord = mat_cord;
+		if (direction_change)
+			{
+			body_object_line->direction = direction;
+			body_object_line->rot_mat = mat4(mat3(direction));
+			}
 		if (start_color_change)
 			body_object_line->start_color = start_color;
 		if (end_color_change)
@@ -127,7 +133,13 @@ namespace scovil
 		mat_cord_change = true;
 		mat_cord=in_mat_cord;
 		}
-	
+
+	void object_change_line::set_direction(quat in_direction)
+		{
+		direction_change = true;
+		direction = in_direction;
+		}
+
 	void object_change_line::set_start_color(color4 in_start_color)
 		{
 		start_color_change = true;
