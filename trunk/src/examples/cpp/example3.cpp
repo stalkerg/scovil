@@ -6,7 +6,7 @@
 int main()
 {
 set_options(640, 480, 32, true, false);
-set_caption("Example2", "Test Example 2");
+set_caption("Example3", "Test Example 3");
 void *first_object = create_scene();
 SDL_Thread *cyle_thread = (SDL_Thread *)init_cycle();
 ////SDL_Delay(2000);
