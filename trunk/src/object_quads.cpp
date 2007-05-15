@@ -31,13 +31,13 @@ namespace scovil
 			glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
 			glMultMatrixf(rot_mat);
 			glBegin(GL_QUADS);
-				glColor4f(color_a.r, color_a.g, color_a.b, color_a.a);
+				glColor4f(color_cord1.r, color_cord1.g, color_cord1.b, color_cord1.a);
 				glVertex3f(cord1.x, cord1.y, cord1.z);
-				glColor4f(color_b.r, color_b.g, color_b.b, color_b.a);
+				glColor4f(color_cord2.r, color_cord2.g, color_cord2.b, color_cord2.a);
 				glVertex3f(cord2.x, cord2.y, cord2.z);
-				glColor4f(color_c.r, color_c.g, color_c.b, color_c.a);
+				glColor4f(color_cord3.r, color_cord3.g, color_cord3.b, color_cord3.a);
 				glVertex3f(cord3.x, cord3.y, cord3.z);
-				glColor4f(color_d.r, color_d.g, color_d.b, color_d.a);
+				glColor4f(color_cord4.r, color_cord4.g, color_cord4.b, color_cord4.a);
 				glVertex3f(cord4.x, cord4.y, cord4.z);
 			glEnd ();
 		if (notall)
@@ -72,10 +72,10 @@ namespace scovil
 
 	void object_quads::default_num()
 		{
-		color_a = color4(1.0, 1.0, 1.0, 1.0);
-		color_b = color4(1.0, 1.0, 1.0, 1.0);
-		color_c = color4(1.0, 1.0, 1.0, 1.0);
-		color_d = color4(1.0, 1.0, 1.0, 1.0);
+		color_cord1 = color4(1.0, 1.0, 1.0, 1.0);
+		color_cord2 = color4(1.0, 1.0, 1.0, 1.0);
+		color_cord3 = color4(1.0, 1.0, 1.0, 1.0);
+		color_cord4 = color4(1.0, 1.0, 1.0, 1.0);
 		}
 	
 
@@ -99,10 +99,10 @@ namespace scovil
 		cord4_change = false;
 		mat_cord_change = false;
 		direction_change = false;
-		color_a_change = false;
-		color_b_change = false;
-		color_c_change = false;
-		color_d_change = false;
+		color_cord1_change = false;
+		color_cord2_change = false;
+		color_cord3_change = false;
+		color_cord4_change = false;
 		upper_object_change = false;
 		}
 
@@ -123,14 +123,14 @@ namespace scovil
 			body_object_quads->direction = direction;
 			body_object_quads->rot_mat = mat4(mat3(direction));
 			}
-		if (color_a_change)
-			body_object_quads->color_a = color_a;
-		if (color_b_change)
-			body_object_quads->color_b = color_b;
-		if (color_c_change)
-			body_object_quads->color_c = color_c;
-		if (color_d_change)
-			body_object_quads->color_d = color_d;
+		if (color_cord1_change)
+			body_object_quads->color_cord1 = color_cord1;
+		if (color_cord2_change)
+			body_object_quads->color_cord2 = color_cord2;
+		if (color_cord3_change)
+			body_object_quads->color_cord3 = color_cord3;
+		if (color_cord4_change)
+			body_object_quads->color_cord4 = color_cord4;
 		if (upper_object_change)
 			{
 			if (body_object_quads->upper_object)
@@ -175,27 +175,27 @@ namespace scovil
 		direction = in_direction;
 		}
 
-	void object_change_quads::set_color_a(color4 in_color_a)
+	void object_change_quads::set_color_cord1(color4 in_color_cord1)
 		{
-		color_a_change = true;
-		color_a=in_color_a;
+		color_cord1_change = true;
+		color_cord1=in_color_cord1;
 		}
 
-	void object_change_quads::set_color_b(color4 in_color_b)
+	void object_change_quads::set_color_cord2(color4 in_color_cord2)
 		{
-		color_b_change = true;
-		color_b=in_color_b;
+		color_cord2_change = true;
+		color_cord2=in_color_cord2;
 		}
 	
-	void object_change_quads::set_color_c(color4 in_color_c)
+	void object_change_quads::set_color_cord3(color4 in_color_cord3)
 		{
-		color_c_change = true;
-		color_c=in_color_c;
+		color_cord3_change = true;
+		color_cord3=in_color_cord3;
 		}
-	void object_change_quads::set_color_d(color4 in_color_d)
+	void object_change_quads::set_color_cord4(color4 in_color_cord4)
 		{
-		color_d_change = true;
-		color_d=in_color_d;
+		color_cord4_change = true;
+		color_cord4=in_color_cord4;
 		}
 
 	void object_change_quads::set_upper_object(object*in_object)
