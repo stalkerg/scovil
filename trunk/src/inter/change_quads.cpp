@@ -42,7 +42,7 @@ void set_cord3_change_quads(float x3, float y3, float z3)
 void set_cord4_change_quads(float x4, float y4, float z4)
 	{
 	if (top_change)
-		top_change->set_cord3(vec3(x4, y4, z4));
+		top_change->set_cord4(vec3(x4, y4, z4));
 	}
 
 void set_mat_cord_change_quads(float x, float y, float z)
