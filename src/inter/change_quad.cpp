@@ -52,10 +52,10 @@ void set_cord_a_b_change_quad(float x1, float y1, float z1,float x3, float y3, f
 	
 	}
 
-void set_cord_h_v_change_quad(float x1,float y1,float z1, float h, float v)
+void set_cord_h_v_change_quad(float h, float v)
 	{
 	if (top_change)
-		top_change->set_cord_h_v(vec3(x1, y1, z1), h, v);
+		top_change->set_cord_h_v(h, v);
 
 	}
 

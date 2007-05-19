@@ -174,16 +174,17 @@ namespace scovil
 		cord4= vec3(in_cord3.x,in_cord1.y,in_cord1.z);
 		}
 	
-	void object_change_quad::set_cord_h_v(vec3 in_cord1, float h=0.0, float v=0.0)
+	void object_change_quad::set_cord_h_v(float h=0.0, float v=0.0)
 		{
+		
 		cord1_change = true;
-		cord1=in_cord1;
+		cord1=vec3(0.0, 0.0, -1.0);
 		cord2_change = true;
-		cord2=vec3(in_cord1.x,v+in_cord1.y,in_cord1.z);
+		cord2=vec3(0.0, v, -1.0);
 		cord3_change = true;
-		cord3=vec3(h+in_cord1.x,v+in_cord1.y,in_cord1.z);
+		cord3=vec3(h, v, -1.0);
 		cord4_change = true;
-		cord4=vec3(h+in_cord1.x,in_cord1.y,in_cord1.z);
+		cord4=vec3(h, 0.0, -1.0);
 
 		}
 

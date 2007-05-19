@@ -39,7 +39,7 @@ namespace scovil
 		void set_cord3(vec3 in_cord3);
 		void set_cord4(vec3 in_cord4);
 		void set_cord_a_b(vec3 in_cord1, vec3 in_cord3);
-		void set_cord_h_v(vec3 in_cord1, float h, float v);
+		void set_cord_h_v(float h, float v);
 		void set_mat_cord(vec3 in_mat_cord);
 		void set_direction(quat in_direction);
 		void set_color1(color4 in_color1);
