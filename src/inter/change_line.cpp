@@ -3,6 +3,12 @@
 #include "../object_line.h"
 #include "../main_cycle.h"
 
+//#define DEBUG
+
+#ifdef DEBUG
+#include <iostream>
+#endif
+
 static scovil::object_change_line *top_change=NULL;
 
 void *create_change_line(void *in_object)
@@ -72,6 +78,9 @@ void set_end_color_change_line(float r, float g, float b, float a)
 
 void set_upper_object_change_line(void *in_object)
 	{
+	#ifdef DEBUG
+	std::cout<<"set_upper_object_change_line "<<in_object<<std::endl;
+	#endif
 	if (top_change)
 		top_change->set_upper_object((scovil::object *)in_object);
 	}

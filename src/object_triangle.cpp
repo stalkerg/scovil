@@ -10,9 +10,6 @@ namespace scovil
 		{
 		#ifdef DEBUG
 		std::cout<<"object_triangle draw()"<<std::endl;
-		print_math(cord1); std::cout<<" ";
-		print_math(cord2); std::cout<<" ";
-		print_math(cord3); std::cout<<std::endl;
 		#endif
 		if(lower_objects.size())
 			{
@@ -122,6 +119,9 @@ namespace scovil
 			body_object_triangle->color3 = color3;
 		if (upper_object_change)
 			{
+			#ifdef DEBUG
+			std::cout<<"object_change_triangle apply() upper_object_change "<<this<<" "<<upper_object<<std::endl;
+			#endif
 			if (body_object_triangle->upper_object)
 				upper_object->del_object(body_object_triangle);
 			body_object_triangle->upper_object = upper_object;
