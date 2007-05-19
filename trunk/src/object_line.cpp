@@ -2,6 +2,8 @@
 #include <GL/gl.h>
 #include "object_line.h"
 
+//#define DEBUG
+
 namespace scovil
 	{
 	void object_line::draw()
@@ -21,6 +23,9 @@ namespace scovil
 
 	void object_line::draw_body(bool notall)
 		{
+		#ifdef DEBUG
+		std::cout<<"object_line draw_body()"<<std::endl;
+		#endif
 		glLineWidth(width);
 		glPushMatrix();
 			glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
@@ -37,13 +42,21 @@ namespace scovil
 
 	void object_line::draw_all()
 		{
+		#ifdef DEBUG
+		std::cout<<"object_line draw_all() "<<this<<std::endl;
+		#endif
 		std::list<object_container>::iterator object_iterator;
 		draw_body(false);
 
 		for(object_iterator=lower_objects.begin();
 		    object_iterator!=lower_objects.end();
 		    ++object_iterator)
+			{
+			#ifdef DEBUG
+			std::cout<<"object_line draw lower object"<<std::endl;
+			#endif
 			object_iterator->p_object->draw();
+			}
 		glPopMatrix();
 		}
 
@@ -86,6 +99,7 @@ namespace scovil
 		start_color_change = false;
 		end_color_change = false;
 		width_change = false;
+		upper_object_change = false;
 		}
 	
 	void object_change_line::apply()//?
@@ -109,6 +123,9 @@ namespace scovil
 			body_object_line->width = width;
 		if (upper_object_change)
 			{
+			#ifdef DEBUG
+			std::cout<<"object_change_line apply() upper_object_change "<<this<<" "<<upper_object<<std::endl;
+			#endif
 			if (body_object_line->upper_object) //Если есть верхний обьект.
 				upper_object->del_object(body_object_line); //То из него выписываем текущий.
 			body_object_line->upper_object = upper_object; //Переписываем указатель на верхнйи обьект.

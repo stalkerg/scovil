@@ -10,7 +10,7 @@ namespace scovil
 
 	void object::add_object(object *in_object)
 		{
-		object_container tmp_container(in_object);
+		//object_container tmp_container(in_object);
 		in_object->upper_object = this;
 		lower_objects.push_back(in_object);
 		}
