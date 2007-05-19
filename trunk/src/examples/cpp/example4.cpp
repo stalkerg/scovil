@@ -24,7 +24,7 @@ set_cord4_change_quad(0.5, 0.0, -1.0);
 //set_cord_a_b_change_quad(0.0,0.0,-1.0,0.5,0.5,-1.0);
 
 //Строит по начальной точке четырехугольника (левую нижнюю) и ширины (h) и высоты (v)
-set_cord_h_v_change_quad(-0.8,-0.8,-1.0,1.5,1.0);
+set_cord_h_v_change_quad(-1.2,-0.4);
 
 set_mat_cord_change_quad(0.0, 0.0, 0.0);
 set_color1_change_quad(0.0, 0.0, 1.0, 1.0);
