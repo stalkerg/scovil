@@ -30,13 +30,21 @@ namespace scovil
 		glPushMatrix();
 			glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
 			glMultMatrixf(rot_mat);
+			if (quad_texture)
+				quad_texture->bind();
+			else
+				glDisable(GL_TEXTURE_2D);
 			glBegin(GL_QUADS);
+				glTexCoord2f(0, 1);
 				glColor4f(color_cord1.r, color_cord1.g, color_cord1.b, color_cord1.a);
 				glVertex3f(cord1.x, cord1.y, cord1.z);
+				glTexCoord2f(1, 1);
 				glColor4f(color_cord2.r, color_cord2.g, color_cord2.b, color_cord2.a);
 				glVertex3f(cord2.x, cord2.y, cord2.z);
+				glTexCoord2f(1, 0);
 				glColor4f(color_cord3.r, color_cord3.g, color_cord3.b, color_cord3.a);
 				glVertex3f(cord3.x, cord3.y, cord3.z);
+				glTexCoord2f(0, 0);
 				glColor4f(color_cord4.r, color_cord4.g, color_cord4.b, color_cord4.a);
 				glVertex3f(cord4.x, cord4.y, cord4.z);
 			glEnd ();
@@ -76,6 +84,7 @@ namespace scovil
 		color_cord2 = color4(1.0, 1.0, 1.0, 1.0);
 		color_cord3 = color4(1.0, 1.0, 1.0, 1.0);
 		color_cord4 = color4(1.0, 1.0, 1.0, 1.0);
+		quad_texture = NULL;
 		}
 	
 
@@ -131,6 +140,8 @@ namespace scovil
 			body_object_quad->color_cord3 = color_cord3;
 		if (color4_change)
 			body_object_quad->color_cord4 = color_cord4;
+		if (set_texture_change)
+			body_object_quad->quad_texture = quad_texture;
 		if (upper_object_change)
 			{
 			if (body_object_quad->upper_object)
@@ -143,55 +154,53 @@ namespace scovil
 	void object_change_quad::set_cord1(vec3 in_cord1)
 		{
 		cord1_change = true;
-		cord1=in_cord1;
+		cord1 = in_cord1;
 		}
 	
 	void object_change_quad::set_cord2(vec3 in_cord2)
 		{
 		cord2_change = true;
-		cord2=in_cord2;
+		cord2 = in_cord2;
 		}
 	
 	void object_change_quad::set_cord3(vec3 in_cord3)
 		{
 		cord3_change = true;
-		cord3=in_cord3;
+		cord3 = in_cord3;
 		}
 	void object_change_quad::set_cord4(vec3 in_cord4)
 		{
 		cord4_change = true;
-		cord4=in_cord4;
+		cord4 = in_cord4;
 		}
 	void object_change_quad::set_cord_a_b(vec3 in_cord1,vec3 in_cord3)
 		{
 		cord1_change = true;
-		cord1=in_cord1;
+		cord1 = in_cord1;
 		cord2_change = true;
-		cord2=vec3(in_cord1.x,in_cord3.y,in_cord1.z);
+		cord2 = vec3(in_cord1.x,in_cord3.y,in_cord1.z);
 		cord3_change = true;
-		cord3=in_cord3;
+		cord3  =in_cord3;
 		cord4_change = true;
-		cord4= vec3(in_cord3.x,in_cord1.y,in_cord1.z);
+		cord4 = vec3(in_cord3.x,in_cord1.y,in_cord1.z);
 		}
 	
 	void object_change_quad::set_cord_h_v(float h=0.0, float v=0.0)
 		{
-		
 		cord1_change = true;
-		cord1=vec3(0.0, 0.0, -1.0);
+		cord1 = vec3(0.0, 0.0, 0.0);
 		cord2_change = true;
-		cord2=vec3(0.0, v, -1.0);
+		cord2 = vec3(0.0, v, 0.0);
 		cord3_change = true;
-		cord3=vec3(h, v, -1.0);
+		cord3 = vec3(h, v, 0.0);
 		cord4_change = true;
-		cord4=vec3(h, 0.0, -1.0);
-
+		cord4 = vec3(h, 0.0, 0.0);
 		}
 
 	void object_change_quad::set_mat_cord(vec3 in_mat_cord)
 		{
 		mat_cord_change = true;
-		mat_cord=in_mat_cord;
+		mat_cord = in_mat_cord;
 		}
 
 	void object_change_quad::set_direction(quat in_direction)
@@ -203,27 +212,33 @@ namespace scovil
 	void object_change_quad::set_color1(color4 in_color1)
 		{
 		color1_change = true;
-		color_cord1=in_color1;
+		color_cord1 = in_color1;
 		}
 
 	void object_change_quad::set_color2(color4 in_color2)
 		{
 		color2_change = true;
-		color_cord2=in_color2;
+		color_cord2 = in_color2;
 		}
 	
 	void object_change_quad::set_color3(color4 in_color3)
 		{
 		color3_change = true;
-		color_cord3=in_color3;
+		color_cord3 = in_color3;
 		}
 	void object_change_quad::set_color4(color4 in_color4)
 		{
 		color4_change = true;
-		color_cord4=in_color4;
+		color_cord4 = in_color4;
 		}
 
-	void object_change_quad::set_upper_object(object*in_object)
+	void object_change_quad::set_texture(texture *in_texture)
+		{
+		set_texture_change = true;
+		quad_texture = in_texture;
+		}
+
+	void object_change_quad::set_upper_object(object *in_object)
 		{
 		upper_object_change = true;
 		upper_object = in_object;

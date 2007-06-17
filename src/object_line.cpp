@@ -26,6 +26,7 @@ namespace scovil
 		#ifdef DEBUG
 		std::cout<<"object_line draw_body()"<<std::endl;
 		#endif
+		glDisable(GL_TEXTURE_2D);
 		glLineWidth(width);
 		glPushMatrix();
 			glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);

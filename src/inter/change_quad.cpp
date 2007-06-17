@@ -99,6 +99,13 @@ void set_color4_change_quad(float r, float g, float b, float a)
 
 	}
 
+void set_texture_change_quad(void *in_texture)
+	{
+	if (top_change)
+		top_change->set_texture((scovil::texture *)in_texture);
+
+	}
+
 void set_upper_object_change_quad(void *in_object)
 	{
 	if (top_change)

@@ -23,6 +23,7 @@ namespace scovil
 
 	void object_triangle::draw_body(bool notall)
 		{
+		glDisable(GL_TEXTURE_2D);
 		glPushMatrix();
 			glTranslatef(mat_cord.x, mat_cord.y, mat_cord.z);
 			glMultMatrixf(rot_mat);

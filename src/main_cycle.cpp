@@ -8,12 +8,10 @@ namespace scovil
 	object *main_object = NULL;
 	static std::list<object_change*> change_list;
 	SDL_mutex *apple_mutex;
-	int fps=0, ticknow=0, ticklast=0;
+	int fps=0, ticknow=0, ticklast=0, cycletiks=0, need_fps=0;
 	float bfps=0;
 	camera *current_camera=NULL;
 	
-	
-
 	int main_cycle(void *unused)
 		{
 		SDL_Init(SDL_INIT_VIDEO);
@@ -47,6 +45,7 @@ namespace scovil
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		glEnable(GL_DEPTH_TEST);
 		glEnable(GL_ALPHA_TEST);
+		
 
 		apple_mutex = SDL_CreateMutex();
 		std::list<object_change*>::iterator change_iterator;
@@ -87,7 +86,12 @@ namespace scovil
 
 			ticklast=ticknow;
 			ticknow=SDL_GetTicks();
-			bfps+=(ticknow-ticklast);
+			cycletiks=ticknow-ticklast;
+			if (need_fps && cycletiks < 2000/need_fps)
+				{
+				SDL_Delay(2000/need_fps-cycletiks);
+				}
+			bfps+=cycletiks;
 			++fps;
 			if (bfps>1000)
 				{
@@ -115,6 +119,11 @@ namespace scovil
 	void set_current_camera(camera *in_camera)
 		{
 		current_camera = in_camera;
+		}
+
+	void set_fps_limiter(int limit)
+		{
+		need_fps = limit;
 		}
 	}
 
