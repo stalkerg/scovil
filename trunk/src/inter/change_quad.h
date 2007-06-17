@@ -14,6 +14,7 @@ void set_color1_change_quad(float r, float g, float b, float a);
 void set_color2_change_quad(float r, float g, float b, float a);
 void set_color3_change_quad(float r, float g, float b, float a);
 void set_color4_change_quad(float r, float g, float b, float a);
+void set_texture_change_quad(void *in_texture);
 void set_upper_object_change_quad(void *in_object);
 void commit_change_quad();
 

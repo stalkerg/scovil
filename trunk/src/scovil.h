@@ -11,6 +11,8 @@
 #include "object_scene.h"
 #include "init.h"
 #include "main_cycle.h"
+#include "camera.h"
+#include "texture.h"
 
 #endif
 

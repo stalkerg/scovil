@@ -29,21 +29,7 @@ class dot():
 			self.edit = False
 			self.global_edit = False
 	
-	def set_cord(self, cord, commit = False):
-		self.cord = cord
-		if not self.edit:
-			if global_edit:
-				global_edit_object.commit()
-			create_change_dot(self.object)
-			global_edit_object = self.object
-			self.edit = True
-			self.global_edit = True
-		set_cord_change_dot(self.cord[0], self.cord[1], self.cord[2])
-		if commit:
-			commit_change_dot()
-			self.edit = False
-			self.global_edit = False
-	
+		
 	def set_color(self, color, commit = False):
 		self.color = color
 		if not self.edit:

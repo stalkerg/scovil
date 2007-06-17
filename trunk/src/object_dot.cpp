@@ -21,6 +21,7 @@ namespace scovil
 
 	void object_dot::draw_body()
 		{
+		glDisable(GL_TEXTURE_2D);
 		glColor4f(color.r, color.g, color.b, color.a);
 		glPointSize(size); //realy slow on some card
 		glBegin(GL_POINTS);

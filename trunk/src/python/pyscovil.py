@@ -2,6 +2,7 @@ from pyinterscovil import *
 
 from pyscovil_global import *
 from pyscovil_camera import *
+from pyscovil_texture import *
 from pyscovil_dot import *
 from pyscovil_line import *
 from pyscovil_triangle import *
@@ -29,6 +30,9 @@ class options():
 		self.long_caption = long_caption
 		self.commit()
 	
+	def fps_limit(self, limit):
+		set_fps_limiter(limit)
+	
 	def commit(self):
 		set_caption(self.caption, self.long_caption)
 		set_options(self.width, self.height, self.bit, self.doublebuffer, self.fullscreen)
@@ -38,7 +42,7 @@ class options():
 class scene():
 	def __init__(self):
 		self.object = create_scene()
-		first_object = self.object
+		first_object = self
 		self.edit = False
 	
 	def delete_lower(self, in_object, commit = False):

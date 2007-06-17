@@ -8,6 +8,7 @@
 #include "../inter/change_triangle.h"
 #include "../inter/change_quad.h"
 #include "../inter/change_camera.h"
+#include "../inter/change_texture.h"
 %}
 
 #include "cstring.i"
@@ -18,3 +19,4 @@
 #include "../inter/change_triangle.h"
 #include "../inter/change_quad.h"
 #include "../inter/change_camera.h"
+#include "../inter/change_texture.h"

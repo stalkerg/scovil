@@ -13,6 +13,7 @@ class quad():
 		self.color3 = [1, 1, 1, 1]
 		self.color4 = [1, 1, 1, 1]
 		self.direction = [0, 0, 0, 0]
+		self.mat_cord = [0, 0, 0]
 		set_cord1_change_quad(self.cord1[0], self.cord1[1], self.cord1[2])
 		set_cord2_change_quad(self.cord2[0], self.cord2[1], self.cord2[2])
 		set_cord3_change_quad(self.cord3[0], self.cord3[1], self.cord3[2])
@@ -151,6 +152,36 @@ class quad():
 			self.edit = True
 			self.global_edit = True
 		set_direction_change_quad(self.direction[0], self.direction[1], self.direction[2], self.direction[3])
+		if commit:
+			commit_change_quad()
+			self.edit = False
+			self.global_edit = False
+	
+	def set_mat_cord(self, cord, commit = False):
+		self.mat_cord = cord
+		if not self.edit:
+			if global_edit:
+				global_edit_object.commit()
+			create_change_quad(self.object)
+			global_edit_object = self.object
+			self.edit = True
+			self.global_edit = True
+		set_mat_cord_change_quad(self.mat_cord[0], self.mat_cord[1], self.mat_cord[2])
+		if commit:
+			commit_change_quad()
+			self.edit = False
+			self.global_edit = False
+	
+	def set_texture(self, texture, commit = False):
+		self.texture = texture
+		if not self.edit:
+			if global_edit:
+				global_edit_object.commit()
+			create_change_quad(self.object)
+			global_edit_object = self.object
+			self.edit = True
+			self.global_edit = True
+		set_texture_change_quad(texture.object)
 		if commit:
 			commit_change_quad()
 			self.edit = False

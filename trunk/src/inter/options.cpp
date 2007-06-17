@@ -22,3 +22,8 @@ void *get_null()
 	{
 	return NULL;
 	}
+
+void set_fps_limiter(int limit)
+	{
+	scovil::set_fps_limiter(limit);
+	}

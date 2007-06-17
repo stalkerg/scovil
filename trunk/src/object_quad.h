@@ -2,6 +2,7 @@
 #define OBJECT_QUAD
 
 #include "object.h"
+#include "texture.h"
 #include "mathlib.h"
 #include <list>
 
@@ -15,6 +16,7 @@ namespace scovil
 		color4 color_cord1, color_cord2, color_cord3, color_cord4;
 		quat direction;
 		mat4 rot_mat;
+		texture *quad_texture;
 		object_quad(vec3 in_cord1, vec3 in_cord2, vec3 in_cord3, vec3 in_cord4);
 		object_quad();
 		virtual void draw();
@@ -28,7 +30,8 @@ namespace scovil
 		vec3 cord1, cord2, cord3, cord4, mat_cord;
 		quat direction;
 		color4 color_cord1, color_cord2, color_cord3, color_cord4;
-		bool direction_change, cord1_change, cord2_change, cord3_change, cord4_change, mat_cord_change, color1_change, color2_change, color3_change, color4_change;
+		bool direction_change, cord1_change, cord2_change, cord3_change, cord4_change, mat_cord_change, color1_change, color2_change, color3_change, color4_change, set_texture_change;
+		texture *quad_texture;
 		void default_num();
 		public:
 		object_change_quad();
@@ -46,6 +49,7 @@ namespace scovil
 		void set_color2(color4 in_color2);
 		void set_color3(color4 in_color3);
 		void set_color4(color4 in_color4);
+		void set_texture(texture *in_texture);
 		void set_upper_object(object *in_object);
 		
 		virtual void apply();

@@ -10,6 +10,7 @@ namespace scovil
 	void set_head_object(object *in_object);
 	void add_change(object_change *in_change);
 	void set_current_camera(camera *in_camera);
+	void set_fps_limiter(int limit);
 	}
 
 #endif
