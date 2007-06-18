@@ -7,5 +7,5 @@ SWIG_ADD_MODULE(ruinterscovil ruby ruinterscovil.i)
 
 # CHANGE NAME OF RUBY MODULE HERE.
 SWIG_LINK_LIBRARIES(ruinterscovil
-   interscovil
+   interscovil ${RUBY_LIBRARIES}
    )
